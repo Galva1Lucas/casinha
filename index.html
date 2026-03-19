@@ -1,565 +1,1546 @@
 <!DOCTYPE html>
 <html lang="pt-BR">
+
 <head>
-<script>
-  window.pixelId = "693f4bbc44ff38fb124af618";
-  var a = document.createElement("script");
-  a.setAttribute("async", "");
-  a.setAttribute("defer", "");
-  a.setAttribute("src", "https://cdn.utmify.com.br/scripts/pixel/pixel.js");
-  document.head.appendChild(a);
-</script>
+  <script>
+    window.pixelId = "693f4bbc44ff38fb124af618";
+    var a = document.createElement("script");
+    a.setAttribute("async", "");
+    a.setAttribute("defer", "");
+    a.setAttribute("src", "https://cdn.utmify.com.br/scripts/pixel/pixel.js");
+    document.head.appendChild(a);
+  </script>
 
-<script
-  src="https://cdn.utmify.com.br/scripts/utms/latest.js"
-  data-utmify-prevent-xcod-sck
-  data-utmify-prevent-subids
-  async
-  defer
-></script>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Kit Casinhas de Boneca – Tuto Biblioteca Digital</title>
-<link href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;600;700;800;900&family=Montserrat:wght@700;800;900&display=swap" rel="stylesheet">
-<style>
-  :root { --green:#00A859; --pink:#E8167A; --orange:#FF6B00; --yellow:#FFD600; }
-  * { box-sizing:border-box; margin:0; padding:0; }
-  body { font-family:'Nunito',sans-serif; background:#fff; color:#222; }
+  <script src="https://cdn.utmify.com.br/scripts/utms/latest.js" data-utmify-prevent-xcod-sck data-utmify-prevent-subids
+    async defer></script>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Kit Casinhas de Boneca – Tuto Biblioteca Digital</title>
+  <link
+    href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;600;700;800;900&family=Montserrat:wght@700;800;900&display=swap"
+    rel="stylesheet">
+  <style>
+    :root {
+      --green: #00A859;
+      --pink: #E8167A;
+      --orange: #FF6B00;
+      --yellow: #FFD600;
+    }
 
-  /* TOP BAR */
-  .top-bar { background:var(--green); text-align:center; padding:9px 16px; color:#fff; font-weight:800; font-size:14px; letter-spacing:0.5px; }
-  .delivery-badge { text-align:center; background:#fff; padding:7px; font-size:13px; color:#222; font-weight:700; border-bottom:1px solid #eee; }
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
 
-  /* HERO */
-  .hero { background:#fff; text-align:center; padding:38px 20px 32px; max-width:700px; margin:0 auto; }
-  .hero h1 { font-family:'Montserrat',sans-serif; color:#111; font-size:clamp(22px,5.5vw,36px); font-weight:900; line-height:1.25; margin-bottom:10px; }
-  .hero h1 .pink { color:var(--pink); }
-  .hero h1 u { text-decoration:underline; text-decoration-color:var(--pink); text-underline-offset:3px; color:#111; }
-  .hero-subtitle { font-size:15px; font-weight:700; color:#666; margin-bottom:20px; }
-  .badge-bonus { display:inline-block; background:var(--orange); color:#fff; font-weight:800; font-size:13px; padding:6px 20px; border-radius:20px; margin-bottom:26px; letter-spacing:0.5px; }
-  .hero-img { max-width:340px; width:90%; margin:0 auto 24px; display:block; border-radius:14px; }
-  .hero-sub { font-size:15px; color:#444; max-width:520px; margin:0 auto 26px; line-height:1.65; }
-  .hero-sub u { color:var(--pink); font-weight:800; text-decoration-color:var(--pink); }
-  .btn-main { display:inline-block; background:var(--green); color:#fff; font-family:'Montserrat',sans-serif; font-weight:900; font-size:17px; padding:16px 40px; border-radius:8px; text-decoration:none; border:none; cursor:pointer; box-shadow:0 4px 20px rgba(0,168,89,0.35); animation:pulse 2.5s ease-in-out infinite; }
-  @keyframes pulse { 0%,100%{box-shadow:0 4px 20px rgba(0,168,89,0.35);} 50%{box-shadow:0 6px 32px rgba(0,168,89,0.6);} }
-  .delivery-small { font-size:12px; color:#555; margin-top:12px; font-weight:600; }
+    body {
+      font-family: 'Nunito', sans-serif;
+      background: #fff;
+      color: #222;
+    }
 
-  /* CARROSSEL */
-  .section-carousel { background:#fff; padding:48px 20px 32px; text-align:center; }
-  .carousel-title { font-family:'Montserrat',sans-serif; font-size:clamp(16px,3.5vw,22px); font-weight:900; color:#222; text-transform:uppercase; max-width:600px; margin:0 auto 24px; }
-  .carousel-wrapper { display:flex; align-items:center; justify-content:center; gap:10px; max-width:460px; margin:0 auto 16px; }
-  .car-track-wrap { flex:1; overflow:hidden; border-radius:16px; box-shadow:0 4px 24px rgba(232,22,122,0.13); }
-  .car-track { display:flex; transition:transform 0.4s cubic-bezier(.4,0,.2,1); }
-  .car-slide { min-width:100%; }
-  .car-slide img { width:100%; display:block; max-height:420px; object-fit:cover; border-radius:16px; }
-  .car-btn { background:var(--pink); color:#fff; border:none; width:40px; height:40px; border-radius:50%; font-size:26px; cursor:pointer; flex-shrink:0; display:flex; align-items:center; justify-content:center; box-shadow:0 2px 10px rgba(232,22,122,0.3); transition:transform 0.15s,background 0.15s; padding-bottom:2px; }
-  .car-btn:hover { background:#c0116a; transform:scale(1.08); }
-  .car-dots { display:flex; justify-content:center; gap:6px; margin:0 auto 8px; flex-wrap:wrap; max-width:280px; }
-  .car-dot { width:9px; height:9px; border-radius:50%; background:#ddd; cursor:pointer; transition:background 0.2s,transform 0.2s; }
-  .car-dot.active { background:var(--pink); transform:scale(1.3); }
-  .car-counter { font-size:12px; font-weight:700; color:#aaa; margin-top:2px; }
-  .carousel-caption { font-size:14px; font-weight:700; color:var(--pink); max-width:400px; margin:16px auto 0; line-height:1.5; }
+    /* TOP BAR */
+    .top-bar {
+      background: var(--green);
+      text-align: center;
+      padding: 9px 16px;
+      color: #fff;
+      font-weight: 800;
+      font-size: 14px;
+      letter-spacing: 0.5px;
+    }
 
-  /* CTA STRIP */
-  .cta-strip { background:linear-gradient(135deg,#a855f7,var(--pink)); padding:40px 20px; text-align:center; }
-  .cta-strip h2 { color:#fff; font-family:'Montserrat',sans-serif; font-weight:900; font-size:clamp(18px,4vw,26px); max-width:520px; margin:0 auto 24px; line-height:1.35; }
-  .btn-white { display:inline-block; background:#fff; color:var(--green); font-family:'Montserrat',sans-serif; font-weight:900; font-size:16px; padding:15px 36px; border-radius:8px; text-decoration:none; border:none; cursor:pointer; box-shadow:0 4px 18px rgba(0,0,0,0.15); }
+    .delivery-badge {
+      text-align: center;
+      background: #fff;
+      padding: 7px;
+      font-size: 13px;
+      color: #222;
+      font-weight: 700;
+      border-bottom: 1px solid #eee;
+    }
 
-  /* IDEAL */
-  .section-ideal { background:#FFF5FA; padding:52px 20px; text-align:center; }
-  .section-ideal h2 { font-family:'Montserrat',sans-serif; font-size:clamp(22px,4.5vw,30px); font-weight:900; color:#222; margin-bottom:34px; line-height:1.2; }
-  .cards-grid { display:grid; grid-template-columns:1fr 1fr; gap:16px; max-width:700px; margin:0 auto; }
-  @media(max-width:500px){.cards-grid{grid-template-columns:1fr;}}
-  .benefit-card { background:#fff; border-radius:14px; padding:22px 18px; text-align:left; box-shadow:0 2px 14px rgba(0,0,0,0.07); }
-  .benefit-card .icon { font-size:30px; margin-bottom:10px; display:block; }
-  .benefit-card h3 { font-weight:800; font-size:14px; color:var(--pink); margin-bottom:9px; line-height:1.35; }
-  .benefit-card p { font-size:12.5px; color:#555; line-height:1.55; }
+    /* HERO */
+    .hero {
+      background: #fff;
+      text-align: center;
+      padding: 38px 20px 32px;
+      max-width: 700px;
+      margin: 0 auto;
+    }
 
-  /* O QUE VAI RECEBER */
-  .section-receive { padding:52px 20px; text-align:center; max-width:700px; margin:0 auto; }
-  .section-receive h2 { font-family:'Montserrat',sans-serif; font-size:clamp(20px,4vw,28px); font-weight:900; color:var(--pink); margin-bottom:10px; }
-  .section-receive .sub-txt { font-size:14px; color:#444; margin-bottom:28px; line-height:1.6; }
-  .section-receive .sub-txt span { color:var(--pink); font-weight:800; }
-  .product-img { max-width:340px; width:90%; display:block; margin:0 auto 28px; border-radius:14px; }
-  .checklist-box { background:#FFF0F7; border-radius:14px; padding:22px 26px; text-align:left; margin-bottom:8px; }
-  .checklist-box h3 { font-weight:800; font-size:15px; color:#333; margin-bottom:14px; text-align:center; }
-  .checklist-box ul { list-style:none; }
-  .checklist-box li { font-size:14px; color:#333; padding:6px 0; display:flex; align-items:flex-start; gap:10px; }
-  .checklist-box li::before { content:"✅"; flex-shrink:0; }
-  .checklist-more { font-size:14px; font-weight:800; color:#333; margin-top:10px; text-align:center; }
+    .hero h1 {
+      font-family: 'Montserrat', sans-serif;
+      color: #111;
+      font-size: clamp(22px, 5.5vw, 36px);
+      font-weight: 900;
+      line-height: 1.25;
+      margin-bottom: 10px;
+    }
 
-  /* BÔNUS */
-  .section-bonus { background:linear-gradient(180deg,#fff5fa 0%,#fff 100%); padding:48px 16px 56px; text-align:center; }
-  .bonus-eyebrow { font-family:'Montserrat',sans-serif; font-size:12px; font-weight:800; color:var(--orange); text-transform:uppercase; letter-spacing:2px; margin-bottom:6px; }
-  .section-bonus h2 { font-family:'Montserrat',sans-serif; font-size:clamp(22px,5vw,30px); font-weight:900; color:#111; margin-bottom:4px; line-height:1.2; }
-  .bonus-sub2 { font-size:15px; color:#666; margin-bottom:28px; font-weight:600; }
-  .bonus-grid { display:flex; flex-direction:column; gap:14px; max-width:480px; margin:0 auto; }
-  .bonus-card { background:#fff; border:2px solid #FFD0E8; border-radius:20px; overflow:hidden; box-shadow:0 4px 20px rgba(232,22,122,0.10); display:flex; align-items:stretch; text-align:left; position:relative; }
-  .bonus-card-img { width:120px; min-width:120px; height:120px; object-fit:cover; display:block; }
-  .bonus-card-body { padding:14px 16px; flex:1; display:flex; flex-direction:column; justify-content:center; }
-  .b-num { font-size:10px; font-weight:800; color:var(--orange); text-transform:uppercase; letter-spacing:0.8px; margin-bottom:4px; display:block; }
-  .b-title { font-family:'Montserrat',sans-serif; font-size:14px; font-weight:900; color:var(--pink); margin-bottom:5px; line-height:1.25; }
-  .bonus-card p { font-size:12px; color:#666; line-height:1.5; }
+    .hero h1 .pink {
+      color: var(--pink);
+    }
 
-  /* PLANOS */
-  .section-plans { background:#fff; padding:52px 20px; text-align:center; }
-  .section-plans h2 { font-family:'Montserrat',sans-serif; font-size:clamp(22px,4.5vw,32px); font-weight:900; color:#222; margin-bottom:8px; }
-  .plans-sub { font-size:13px; color:#888; margin-bottom:32px; }
-  .plans-grid { display:grid; grid-template-columns:1fr 1fr; gap:22px; max-width:700px; margin:0 auto; }
-  @media(max-width:520px){.plans-grid{grid-template-columns:1fr;}}
-  .plan-card { border-radius:16px; padding:30px 22px; text-align:center; border:2px solid #eee; position:relative; }
-  .plan-card.basic { background:#fafafa; }
-  .plan-card.complete { background:#fff0f7; border-color:var(--pink); }
-  .plan-top-badge { position:absolute; top:-14px; left:50%; transform:translateX(-50%); background:var(--pink); color:#fff; font-size:11px; font-weight:900; padding:4px 18px; border-radius:20px; white-space:nowrap; letter-spacing:0.5px; }
-  .plan-title { font-family:'Montserrat',sans-serif; font-weight:900; font-size:15px; color:#222; margin-bottom:14px; text-transform:uppercase; line-height:1.3; }
-  .plan-card.complete .plan-title { color:var(--pink); }
-  .plan-img { max-width:130px; width:100%; margin:0 auto 14px; display:block; }
-  .plan-list { list-style:none; text-align:left; margin-bottom:18px; }
-  .plan-list li { font-size:12.5px; color:#444; padding:4px 0; display:flex; gap:8px; align-items:flex-start; }
-  .plan-list li::before { content:"✅"; flex-shrink:0; }
-  .plan-upsell { font-size:12px; color:#888; font-style:italic; margin-bottom:14px; line-height:1.5; }
-  .plan-old { font-size:13px; color:#bbb; text-decoration:line-through; margin-bottom:2px; }
-  .plan-price { font-family:'Montserrat',sans-serif; font-weight:900; font-size:34px; margin-bottom:4px; }
-  .plan-card.basic .plan-price { color:var(--green); }
-  .plan-card.complete .plan-price { color:var(--pink); }
-  .plan-note { font-size:12px; color:#888; margin-bottom:14px; }
-  .plan-savings { display:inline-block; background:var(--yellow); color:#333; font-size:11px; font-weight:800; padding:3px 14px; border-radius:20px; margin-bottom:16px; }
-  .btn-plan { display:block; width:100%; padding:14px; border-radius:8px; border:none; font-family:'Montserrat',sans-serif; font-weight:900; font-size:13px; cursor:pointer; transition:transform 0.15s; background:var(--green); color:#fff; box-shadow:0 4px 16px rgba(0,168,89,0.3); }
-  .btn-plan:hover { transform:translateY(-2px); }
-  .plan-promo { font-size:11px; color:var(--orange); margin-top:10px; font-weight:700; }
+    .hero h1 u {
+      text-decoration: underline;
+      text-decoration-color: var(--pink);
+      text-underline-offset: 3px;
+      color: #111;
+    }
 
-  /* POP-UP */
-  .popup-overlay { display:none; position:fixed; inset:0; background:rgba(0,0,0,0.65); z-index:1000; align-items:center; justify-content:center; padding:20px; }
-  .popup-overlay.active { display:flex; }
-  .popup-box { background:#fff; border-radius:20px; padding:36px 28px; max-width:420px; width:100%; text-align:center; position:relative; animation:popIn 0.3s ease; }
-  @keyframes popIn { from{transform:scale(0.85);opacity:0;} to{transform:scale(1);opacity:1;} }
-  .popup-close { position:absolute; top:12px; right:16px; background:none; border:none; font-size:22px; cursor:pointer; color:#888; }
-  .popup-warn { font-size:44px; margin-bottom:10px; }
-  .popup-title { font-family:'Montserrat',sans-serif; font-size:22px; font-weight:900; color:var(--pink); margin-bottom:14px; line-height:1.3; }
-  .popup-body { font-size:14.5px; color:#444; line-height:1.7; margin-bottom:22px; }
-  .popup-body s { color:#bbb; }
-  .popup-body strong { color:var(--pink); font-size:22px; }
-  .btn-popup-yes { display:block; width:100%; background:var(--green); color:#fff; border:none; padding:15px; border-radius:8px; font-family:'Montserrat',sans-serif; font-weight:900; font-size:15px; cursor:pointer; margin-bottom:14px; box-shadow:0 4px 16px rgba(0,168,89,0.3); transition:transform 0.15s; }
-  .btn-popup-yes:hover { transform:translateY(-2px); }
-  .btn-popup-no { background:none; border:none; font-size:12px; color:#888; cursor:pointer; text-decoration:underline; }
+    .hero-subtitle {
+      font-size: 15px;
+      font-weight: 700;
+      color: #666;
+      margin-bottom: 20px;
+    }
 
-  /* GARANTIA */
-  .section-guarantee { background:#F0FFF7; padding:52px 20px; text-align:center; }
-  .guarantee-wrap { max-width:580px; margin:0 auto; display:flex; gap:24px; align-items:center; background:#fff; border-radius:18px; padding:28px 26px; box-shadow:0 4px 24px rgba(0,168,89,0.1); }
-  @media(max-width:500px){.guarantee-wrap{flex-direction:column;text-align:center;}}
-  .guarantee-icon { font-size:72px; flex-shrink:0; }
-  .guarantee-wrap h3 { font-family:'Montserrat',sans-serif; font-weight:900; font-size:18px; color:var(--green); margin-bottom:12px; text-transform:uppercase; }
-  .guarantee-wrap p { font-size:14px; color:#555; line-height:1.65; }
+    .badge-bonus {
+      display: inline-block;
+      background: var(--orange);
+      color: #fff;
+      font-weight: 800;
+      font-size: 13px;
+      padding: 6px 20px;
+      border-radius: 20px;
+      margin-bottom: 26px;
+      letter-spacing: 0.5px;
+    }
 
-  /* DEPOIMENTOS */
-  .section-testi { background:#FFF5FA; padding:56px 20px; text-align:center; }
-  .section-testi h2 { font-family:'Montserrat',sans-serif; font-size:clamp(20px,4vw,26px); font-weight:900; color:#222; margin-bottom:6px; }
-  .testi-sub { font-size:13px; color:#888; margin-bottom:34px; }
-  .testi-grid { display:grid; grid-template-columns:repeat(3,1fr); gap:18px; max-width:800px; margin:0 auto 30px; }
-  @media(max-width:640px){.testi-grid{grid-template-columns:1fr;}}
-  @media(min-width:641px) and (max-width:820px){.testi-grid{grid-template-columns:1fr 1fr;}}
-  .testi-card { background:#fff; border-radius:18px; padding:24px 20px; text-align:left; box-shadow:0 3px 18px rgba(232,22,122,0.09); border-top:4px solid var(--pink); position:relative; overflow:hidden; }
-  .testi-card::before { content:"\201C"; font-family:Georgia,serif; font-size:80px; color:var(--pink); opacity:0.08; position:absolute; top:-8px; right:10px; line-height:1; pointer-events:none; }
-  .testi-stars { color:#FFB800; font-size:16px; letter-spacing:1px; margin-bottom:12px; }
-  .testi-text { font-size:14px; color:#444; line-height:1.7; margin-bottom:18px; font-style:italic; position:relative; z-index:1; }
-  .testi-footer { display:flex; align-items:center; gap:12px; }
-  .testi-avatar { width:44px; height:44px; border-radius:50%; display:flex; align-items:center; justify-content:center; font-weight:900; font-size:17px; color:#fff; flex-shrink:0; }
-  .testi-name { font-weight:800; font-size:13.5px; color:#222; }
-  .testi-loc { font-size:11.5px; color:#888; margin-top:2px; }
-  .testi-verified { display:inline-flex; align-items:center; gap:4px; font-size:11px; font-weight:700; color:var(--green); background:#eafff3; padding:3px 10px; border-radius:20px; margin-top:10px; }
-  .testi-stats { display:flex; align-items:stretch; background:linear-gradient(135deg,var(--pink) 0%,#c0116a 100%); border-radius:16px; max-width:480px; margin:0 auto; overflow:hidden; }
-  .testi-stat { flex:1; padding:20px 10px; text-align:center; color:#fff; }
-  .testi-stat+.testi-stat { border-left:1px solid rgba(255,255,255,0.25); }
-  .snum { font-family:'Montserrat',sans-serif; font-size:26px; font-weight:900; display:block; }
-  .slabel { font-size:11px; opacity:0.85; margin-top:2px; }
+    .hero-img {
+      max-width: 340px;
+      width: 90%;
+      margin: 0 auto 24px;
+      display: block;
+      border-radius: 14px;
+    }
 
-  /* FAQ */
-  .section-faq { background:#f7f7f7; padding:52px 20px; }
-  .section-faq h2 { font-family:'Montserrat',sans-serif; font-weight:900; font-size:clamp(20px,4vw,26px); text-align:center; color:#222; margin-bottom:30px; }
-  .faq-list { max-width:640px; margin:0 auto; }
-  .faq-item { background:#fff; border-radius:10px; margin-bottom:10px; overflow:hidden; box-shadow:0 1px 6px rgba(0,0,0,0.06); }
-  .faq-q { width:100%; background:none; border:none; text-align:left; padding:16px 20px; font-family:'Nunito',sans-serif; font-size:14px; font-weight:700; color:#222; cursor:pointer; display:flex; justify-content:space-between; align-items:center; }
-  .faq-q .plus { font-size:22px; font-weight:700; color:var(--green); transition:transform 0.25s; flex-shrink:0; margin-left:12px; }
-  .faq-q.open .plus { transform:rotate(45deg); }
-  .faq-a { max-height:0; overflow:hidden; transition:max-height 0.3s ease; font-size:13.5px; color:#555; line-height:1.65; }
-  .faq-a.open { max-height:200px; }
-  .faq-a-inner { padding:0 20px 16px; }
+    .hero-sub {
+      font-size: 15px;
+      color: #444;
+      max-width: 520px;
+      margin: 0 auto 26px;
+      line-height: 1.65;
+    }
 
-  /* FOOTER */
-  footer { background:#111; padding:30px 20px; text-align:center; color:#888; font-size:12px; }
-  .f-crime { color:var(--pink); font-weight:800; font-size:13px; text-transform:uppercase; letter-spacing:0.5px; margin-bottom:8px; }
-  footer p { margin-bottom:5px; line-height:1.7; }
-  .f-badges { display:flex; gap:12px; justify-content:center; flex-wrap:wrap; margin-top:16px; }
-  .f-badge { background:#222; border-radius:8px; padding:7px 16px; font-size:11px; font-weight:700; color:#aaa; display:flex; align-items:center; gap:5px; }
-</style>
+    .hero-sub u {
+      color: var(--pink);
+      font-weight: 800;
+      text-decoration-color: var(--pink);
+    }
+
+    .btn-main {
+      display: inline-block;
+      background: var(--green);
+      color: #fff;
+      font-family: 'Montserrat', sans-serif;
+      font-weight: 900;
+      font-size: 17px;
+      padding: 16px 40px;
+      border-radius: 8px;
+      text-decoration: none;
+      border: none;
+      cursor: pointer;
+      box-shadow: 0 4px 20px rgba(0, 168, 89, 0.35);
+      animation: pulse 2.5s ease-in-out infinite;
+    }
+
+    @keyframes pulse {
+
+      0%,
+      100% {
+        box-shadow: 0 4px 20px rgba(0, 168, 89, 0.35);
+      }
+
+      50% {
+        box-shadow: 0 6px 32px rgba(0, 168, 89, 0.6);
+      }
+    }
+
+    .delivery-small {
+      font-size: 12px;
+      color: #555;
+      margin-top: 12px;
+      font-weight: 600;
+    }
+
+    /* CARROSSEL */
+    .section-carousel {
+      background: #fff;
+      padding: 48px 20px 32px;
+      text-align: center;
+    }
+
+    .carousel-title {
+      font-family: 'Montserrat', sans-serif;
+      font-size: clamp(16px, 3.5vw, 22px);
+      font-weight: 900;
+      color: #222;
+      text-transform: uppercase;
+      max-width: 600px;
+      margin: 0 auto 24px;
+    }
+
+    .carousel-wrapper {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 10px;
+      max-width: 460px;
+      margin: 0 auto 16px;
+    }
+
+    .car-track-wrap {
+      flex: 1;
+      overflow: hidden;
+      border-radius: 16px;
+      box-shadow: 0 4px 24px rgba(232, 22, 122, 0.13);
+    }
+
+    .car-track {
+      display: flex;
+      transition: transform 0.4s cubic-bezier(.4, 0, .2, 1);
+    }
+
+    .car-slide {
+      min-width: 100%;
+    }
+
+    .car-slide img {
+      width: 100%;
+      display: block;
+      max-height: 420px;
+      object-fit: cover;
+      border-radius: 16px;
+    }
+
+    .car-btn {
+      background: var(--pink);
+      color: #fff;
+      border: none;
+      width: 40px;
+      height: 40px;
+      border-radius: 50%;
+      font-size: 26px;
+      cursor: pointer;
+      flex-shrink: 0;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      box-shadow: 0 2px 10px rgba(232, 22, 122, 0.3);
+      transition: transform 0.15s, background 0.15s;
+      padding-bottom: 2px;
+    }
+
+    .car-btn:hover {
+      background: #c0116a;
+      transform: scale(1.08);
+    }
+
+    .car-dots {
+      display: flex;
+      justify-content: center;
+      gap: 6px;
+      margin: 0 auto 8px;
+      flex-wrap: wrap;
+      max-width: 280px;
+    }
+
+    .car-dot {
+      width: 9px;
+      height: 9px;
+      border-radius: 50%;
+      background: #ddd;
+      cursor: pointer;
+      transition: background 0.2s, transform 0.2s;
+    }
+
+    .car-dot.active {
+      background: var(--pink);
+      transform: scale(1.3);
+    }
+
+    .car-counter {
+      font-size: 12px;
+      font-weight: 700;
+      color: #aaa;
+      margin-top: 2px;
+    }
+
+    .carousel-caption {
+      font-size: 14px;
+      font-weight: 700;
+      color: var(--pink);
+      max-width: 400px;
+      margin: 16px auto 0;
+      line-height: 1.5;
+    }
+
+    /* CTA STRIP */
+    .cta-strip {
+      background: linear-gradient(135deg, #a855f7, var(--pink));
+      padding: 40px 20px;
+      text-align: center;
+    }
+
+    .cta-strip h2 {
+      color: #fff;
+      font-family: 'Montserrat', sans-serif;
+      font-weight: 900;
+      font-size: clamp(18px, 4vw, 26px);
+      max-width: 520px;
+      margin: 0 auto 24px;
+      line-height: 1.35;
+    }
+
+    .btn-white {
+      display: inline-block;
+      background: #fff;
+      color: var(--green);
+      font-family: 'Montserrat', sans-serif;
+      font-weight: 900;
+      font-size: 16px;
+      padding: 15px 36px;
+      border-radius: 8px;
+      text-decoration: none;
+      border: none;
+      cursor: pointer;
+      box-shadow: 0 4px 18px rgba(0, 0, 0, 0.15);
+    }
+
+    /* IDEAL */
+    .section-ideal {
+      background: #FFF5FA;
+      padding: 52px 20px;
+      text-align: center;
+    }
+
+    .section-ideal h2 {
+      font-family: 'Montserrat', sans-serif;
+      font-size: clamp(22px, 4.5vw, 30px);
+      font-weight: 900;
+      color: #222;
+      margin-bottom: 34px;
+      line-height: 1.2;
+    }
+
+    .cards-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 16px;
+      max-width: 700px;
+      margin: 0 auto;
+    }
+
+    @media(max-width:500px) {
+      .cards-grid {
+        grid-template-columns: 1fr;
+      }
+    }
+
+    .benefit-card {
+      background: #fff;
+      border-radius: 14px;
+      padding: 22px 18px;
+      text-align: left;
+      box-shadow: 0 2px 14px rgba(0, 0, 0, 0.07);
+    }
+
+    .benefit-card .icon {
+      font-size: 30px;
+      margin-bottom: 10px;
+      display: block;
+    }
+
+    .benefit-card h3 {
+      font-weight: 800;
+      font-size: 14px;
+      color: var(--pink);
+      margin-bottom: 9px;
+      line-height: 1.35;
+    }
+
+    .benefit-card p {
+      font-size: 12.5px;
+      color: #555;
+      line-height: 1.55;
+    }
+
+    /* O QUE VAI RECEBER */
+    .section-receive {
+      padding: 52px 20px;
+      text-align: center;
+      max-width: 700px;
+      margin: 0 auto;
+    }
+
+    .section-receive h2 {
+      font-family: 'Montserrat', sans-serif;
+      font-size: clamp(20px, 4vw, 28px);
+      font-weight: 900;
+      color: var(--pink);
+      margin-bottom: 10px;
+    }
+
+    .section-receive .sub-txt {
+      font-size: 14px;
+      color: #444;
+      margin-bottom: 28px;
+      line-height: 1.6;
+    }
+
+    .section-receive .sub-txt span {
+      color: var(--pink);
+      font-weight: 800;
+    }
+
+    .product-img {
+      max-width: 340px;
+      width: 90%;
+      display: block;
+      margin: 0 auto 28px;
+      border-radius: 14px;
+    }
+
+    .checklist-box {
+      background: #FFF0F7;
+      border-radius: 14px;
+      padding: 22px 26px;
+      text-align: left;
+      margin-bottom: 8px;
+    }
+
+    .checklist-box h3 {
+      font-weight: 800;
+      font-size: 15px;
+      color: #333;
+      margin-bottom: 14px;
+      text-align: center;
+    }
+
+    .checklist-box ul {
+      list-style: none;
+    }
+
+    .checklist-box li {
+      font-size: 14px;
+      color: #333;
+      padding: 6px 0;
+      display: flex;
+      align-items: flex-start;
+      gap: 10px;
+    }
+
+    .checklist-box li::before {
+      content: "✅";
+      flex-shrink: 0;
+    }
+
+    .checklist-more {
+      font-size: 14px;
+      font-weight: 800;
+      color: #333;
+      margin-top: 10px;
+      text-align: center;
+    }
+
+    /* BÔNUS */
+    .section-bonus {
+      background: #fff;
+      padding: 52px 20px;
+      text-align: center;
+    }
+
+    .bonus-eyebrow {
+      font-family: 'Montserrat', sans-serif;
+      font-size: 13px;
+      font-weight: 800;
+      color: var(--orange);
+      text-transform: uppercase;
+      letter-spacing: 1px;
+      margin-bottom: 6px;
+    }
+
+    .section-bonus h2 {
+      font-family: 'Montserrat', sans-serif;
+      font-size: clamp(20px, 4vw, 28px);
+      font-weight: 900;
+      color: #222;
+      margin-bottom: 4px;
+    }
+
+    .bonus-sub2 {
+      font-size: 14px;
+      color: #555;
+      margin-bottom: 30px;
+    }
+
+    .bonus-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 16px;
+      max-width: 700px;
+      margin: 0 auto;
+    }
+
+    @media(max-width:520px) {
+      .bonus-grid {
+        grid-template-columns: 1fr 1fr;
+      }
+    }
+
+    .bonus-card {
+      background: linear-gradient(160deg, #FFF0F7 0%, #fff 100%);
+      border: 2px solid #FFD0E8;
+      border-radius: 14px;
+      padding: 22px 14px;
+      text-align: center;
+    }
+
+    .b-icon {
+      font-size: 34px;
+      margin-bottom: 8px;
+    }
+
+    .b-num {
+      font-size: 10px;
+      font-weight: 800;
+      color: var(--orange);
+      text-transform: uppercase;
+      letter-spacing: 0.5px;
+      margin-bottom: 5px;
+    }
+
+    .b-title {
+      font-size: 12.5px;
+      font-weight: 800;
+      color: #222;
+      margin-bottom: 6px;
+    }
+
+    .bonus-card p {
+      font-size: 11.5px;
+      color: #666;
+      line-height: 1.45;
+    }
+
+    /* PLANOS */
+    .section-plans {
+      background: #fff;
+      padding: 52px 20px;
+      text-align: center;
+    }
+
+    .section-plans h2 {
+      font-family: 'Montserrat', sans-serif;
+      font-size: clamp(22px, 4.5vw, 32px);
+      font-weight: 900;
+      color: #222;
+      margin-bottom: 8px;
+    }
+
+    .plans-sub {
+      font-size: 13px;
+      color: #888;
+      margin-bottom: 32px;
+    }
+
+    .plans-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 22px;
+      max-width: 700px;
+      margin: 0 auto;
+    }
+
+    @media(max-width:520px) {
+      .plans-grid {
+        grid-template-columns: 1fr;
+      }
+    }
+
+    .plan-card {
+      border-radius: 16px;
+      padding: 30px 22px;
+      text-align: center;
+      border: 2px solid #eee;
+      position: relative;
+    }
+
+    .plan-card.basic {
+      background: #fafafa;
+    }
+
+    .plan-card.complete {
+      background: #fff0f7;
+      border-color: var(--pink);
+    }
+
+    .plan-top-badge {
+      position: absolute;
+      top: -14px;
+      left: 50%;
+      transform: translateX(-50%);
+      background: var(--pink);
+      color: #fff;
+      font-size: 11px;
+      font-weight: 900;
+      padding: 4px 18px;
+      border-radius: 20px;
+      white-space: nowrap;
+      letter-spacing: 0.5px;
+    }
+
+    .plan-title {
+      font-family: 'Montserrat', sans-serif;
+      font-weight: 900;
+      font-size: 15px;
+      color: #222;
+      margin-bottom: 14px;
+      text-transform: uppercase;
+      line-height: 1.3;
+    }
+
+    .plan-card.complete .plan-title {
+      color: var(--pink);
+    }
+
+    .plan-img {
+      max-width: 130px;
+      width: 100%;
+      margin: 0 auto 14px;
+      display: block;
+    }
+
+    .plan-list {
+      list-style: none;
+      text-align: left;
+      margin-bottom: 18px;
+    }
+
+    .plan-list li {
+      font-size: 12.5px;
+      color: #444;
+      padding: 4px 0;
+      display: flex;
+      gap: 8px;
+      align-items: flex-start;
+    }
+
+    .plan-list li::before {
+      content: "✅";
+      flex-shrink: 0;
+    }
+
+    .plan-upsell {
+      font-size: 12px;
+      color: #888;
+      font-style: italic;
+      margin-bottom: 14px;
+      line-height: 1.5;
+    }
+
+    .plan-old {
+      font-size: 13px;
+      color: #bbb;
+      text-decoration: line-through;
+      margin-bottom: 2px;
+    }
+
+    .plan-price {
+      font-family: 'Montserrat', sans-serif;
+      font-weight: 900;
+      font-size: 34px;
+      margin-bottom: 4px;
+    }
+
+    .plan-card.basic .plan-price {
+      color: var(--green);
+    }
+
+    .plan-card.complete .plan-price {
+      color: var(--pink);
+    }
+
+    .plan-note {
+      font-size: 12px;
+      color: #888;
+      margin-bottom: 14px;
+    }
+
+    .plan-savings {
+      display: inline-block;
+      background: var(--yellow);
+      color: #333;
+      font-size: 11px;
+      font-weight: 800;
+      padding: 3px 14px;
+      border-radius: 20px;
+      margin-bottom: 16px;
+    }
+
+    .btn-plan {
+      display: block;
+      width: 100%;
+      padding: 14px;
+      border-radius: 8px;
+      border: none;
+      font-family: 'Montserrat', sans-serif;
+      font-weight: 900;
+      font-size: 13px;
+      cursor: pointer;
+      transition: transform 0.15s;
+      background: var(--green);
+      color: #fff;
+      box-shadow: 0 4px 16px rgba(0, 168, 89, 0.3);
+    }
+
+    .btn-plan:hover {
+      transform: translateY(-2px);
+    }
+
+    .plan-promo {
+      font-size: 11px;
+      color: var(--orange);
+      margin-top: 10px;
+      font-weight: 700;
+    }
+
+    /* POP-UP */
+    .popup-overlay {
+      display: none;
+      position: fixed;
+      inset: 0;
+      background: rgba(0, 0, 0, 0.65);
+      z-index: 1000;
+      align-items: center;
+      justify-content: center;
+      padding: 20px;
+    }
+
+    .popup-overlay.active {
+      display: flex;
+    }
+
+    .popup-box {
+      background: #fff;
+      border-radius: 20px;
+      padding: 36px 28px;
+      max-width: 420px;
+      width: 100%;
+      text-align: center;
+      position: relative;
+      animation: popIn 0.3s ease;
+    }
+
+    @keyframes popIn {
+      from {
+        transform: scale(0.85);
+        opacity: 0;
+      }
+
+      to {
+        transform: scale(1);
+        opacity: 1;
+      }
+    }
+
+    .popup-close {
+      position: absolute;
+      top: 12px;
+      right: 16px;
+      background: none;
+      border: none;
+      font-size: 22px;
+      cursor: pointer;
+      color: #888;
+    }
+
+    .popup-warn {
+      font-size: 44px;
+      margin-bottom: 10px;
+    }
+
+    .popup-title {
+      font-family: 'Montserrat', sans-serif;
+      font-size: 22px;
+      font-weight: 900;
+      color: var(--pink);
+      margin-bottom: 14px;
+      line-height: 1.3;
+    }
+
+    .popup-body {
+      font-size: 14.5px;
+      color: #444;
+      line-height: 1.7;
+      margin-bottom: 22px;
+    }
+
+    .popup-body s {
+      color: #bbb;
+    }
+
+    .popup-body strong {
+      color: var(--pink);
+      font-size: 22px;
+    }
+
+    .btn-popup-yes {
+      display: block;
+      width: 100%;
+      background: var(--green);
+      color: #fff;
+      border: none;
+      padding: 15px;
+      border-radius: 8px;
+      font-family: 'Montserrat', sans-serif;
+      font-weight: 900;
+      font-size: 15px;
+      cursor: pointer;
+      margin-bottom: 14px;
+      box-shadow: 0 4px 16px rgba(0, 168, 89, 0.3);
+      transition: transform 0.15s;
+    }
+
+    .btn-popup-yes:hover {
+      transform: translateY(-2px);
+    }
+
+    .btn-popup-no {
+      background: none;
+      border: none;
+      font-size: 12px;
+      color: #888;
+      cursor: pointer;
+      text-decoration: underline;
+    }
+
+    /* GARANTIA */
+    .section-guarantee {
+      background: #F0FFF7;
+      padding: 52px 20px;
+      text-align: center;
+    }
+
+    .guarantee-wrap {
+      max-width: 580px;
+      margin: 0 auto;
+      display: flex;
+      gap: 24px;
+      align-items: center;
+      background: #fff;
+      border-radius: 18px;
+      padding: 28px 26px;
+      box-shadow: 0 4px 24px rgba(0, 168, 89, 0.1);
+    }
+
+    @media(max-width:500px) {
+      .guarantee-wrap {
+        flex-direction: column;
+        text-align: center;
+      }
+    }
+
+    .guarantee-icon {
+      font-size: 72px;
+      flex-shrink: 0;
+    }
+
+    .guarantee-wrap h3 {
+      font-family: 'Montserrat', sans-serif;
+      font-weight: 900;
+      font-size: 18px;
+      color: var(--green);
+      margin-bottom: 12px;
+      text-transform: uppercase;
+    }
+
+    .guarantee-wrap p {
+      font-size: 14px;
+      color: #555;
+      line-height: 1.65;
+    }
+
+    /* DEPOIMENTOS */
+    .section-testi {
+      background: #FFF5FA;
+      padding: 56px 20px;
+      text-align: center;
+    }
+
+    .section-testi h2 {
+      font-family: 'Montserrat', sans-serif;
+      font-size: clamp(20px, 4vw, 26px);
+      font-weight: 900;
+      color: #222;
+      margin-bottom: 6px;
+    }
+
+    .testi-sub {
+      font-size: 13px;
+      color: #888;
+      margin-bottom: 34px;
+    }
+
+    .testi-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 18px;
+      max-width: 800px;
+      margin: 0 auto 30px;
+    }
+
+    @media(max-width:640px) {
+      .testi-grid {
+        grid-template-columns: 1fr;
+      }
+    }
+
+    @media(min-width:641px) and (max-width:820px) {
+      .testi-grid {
+        grid-template-columns: 1fr 1fr;
+      }
+    }
+
+    .testi-card {
+      background: #fff;
+      border-radius: 18px;
+      padding: 24px 20px;
+      text-align: left;
+      box-shadow: 0 3px 18px rgba(232, 22, 122, 0.09);
+      border-top: 4px solid var(--pink);
+      position: relative;
+      overflow: hidden;
+    }
+
+    .testi-card::before {
+      content: "\201C";
+      font-family: Georgia, serif;
+      font-size: 80px;
+      color: var(--pink);
+      opacity: 0.08;
+      position: absolute;
+      top: -8px;
+      right: 10px;
+      line-height: 1;
+      pointer-events: none;
+    }
+
+    .testi-stars {
+      color: #FFB800;
+      font-size: 16px;
+      letter-spacing: 1px;
+      margin-bottom: 12px;
+    }
+
+    .testi-text {
+      font-size: 14px;
+      color: #444;
+      line-height: 1.7;
+      margin-bottom: 18px;
+      font-style: italic;
+      position: relative;
+      z-index: 1;
+    }
+
+    .testi-footer {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+    }
+
+    .testi-avatar {
+      width: 44px;
+      height: 44px;
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-weight: 900;
+      font-size: 17px;
+      color: #fff;
+      flex-shrink: 0;
+    }
+
+    .testi-name {
+      font-weight: 800;
+      font-size: 13.5px;
+      color: #222;
+    }
+
+    .testi-loc {
+      font-size: 11.5px;
+      color: #888;
+      margin-top: 2px;
+    }
+
+    .testi-verified {
+      display: inline-flex;
+      align-items: center;
+      gap: 4px;
+      font-size: 11px;
+      font-weight: 700;
+      color: var(--green);
+      background: #eafff3;
+      padding: 3px 10px;
+      border-radius: 20px;
+      margin-top: 10px;
+    }
+
+    .testi-stats {
+      display: flex;
+      align-items: stretch;
+      background: linear-gradient(135deg, var(--pink) 0%, #c0116a 100%);
+      border-radius: 16px;
+      max-width: 480px;
+      margin: 0 auto;
+      overflow: hidden;
+    }
+
+    .testi-stat {
+      flex: 1;
+      padding: 20px 10px;
+      text-align: center;
+      color: #fff;
+    }
+
+    .testi-stat+.testi-stat {
+      border-left: 1px solid rgba(255, 255, 255, 0.25);
+    }
+
+    .snum {
+      font-family: 'Montserrat', sans-serif;
+      font-size: 26px;
+      font-weight: 900;
+      display: block;
+    }
+
+    .slabel {
+      font-size: 11px;
+      opacity: 0.85;
+      margin-top: 2px;
+    }
+
+    /* FAQ */
+    .section-faq {
+      background: #f7f7f7;
+      padding: 52px 20px;
+    }
+
+    .section-faq h2 {
+      font-family: 'Montserrat', sans-serif;
+      font-weight: 900;
+      font-size: clamp(20px, 4vw, 26px);
+      text-align: center;
+      color: #222;
+      margin-bottom: 30px;
+    }
+
+    .faq-list {
+      max-width: 640px;
+      margin: 0 auto;
+    }
+
+    .faq-item {
+      background: #fff;
+      border-radius: 10px;
+      margin-bottom: 10px;
+      overflow: hidden;
+      box-shadow: 0 1px 6px rgba(0, 0, 0, 0.06);
+    }
+
+    .faq-q {
+      width: 100%;
+      background: none;
+      border: none;
+      text-align: left;
+      padding: 16px 20px;
+      font-family: 'Nunito', sans-serif;
+      font-size: 14px;
+      font-weight: 700;
+      color: #222;
+      cursor: pointer;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+
+    .faq-q .plus {
+      font-size: 22px;
+      font-weight: 700;
+      color: var(--green);
+      transition: transform 0.25s;
+      flex-shrink: 0;
+      margin-left: 12px;
+    }
+
+    .faq-q.open .plus {
+      transform: rotate(45deg);
+    }
+
+    .faq-a {
+      max-height: 0;
+      overflow: hidden;
+      transition: max-height 0.3s ease;
+      font-size: 13.5px;
+      color: #555;
+      line-height: 1.65;
+    }
+
+    .faq-a.open {
+      max-height: 200px;
+    }
+
+    .faq-a-inner {
+      padding: 0 20px 16px;
+    }
+
+    /* FOOTER */
+    footer {
+      background: #111;
+      padding: 30px 20px;
+      text-align: center;
+      color: #888;
+      font-size: 12px;
+    }
+
+    .f-crime {
+      color: var(--pink);
+      font-weight: 800;
+      font-size: 13px;
+      text-transform: uppercase;
+      letter-spacing: 0.5px;
+      margin-bottom: 8px;
+    }
+
+    footer p {
+      margin-bottom: 5px;
+      line-height: 1.7;
+    }
+
+    .f-badges {
+      display: flex;
+      gap: 12px;
+      justify-content: center;
+      flex-wrap: wrap;
+      margin-top: 16px;
+    }
+
+    .f-badge {
+      background: #222;
+      border-radius: 8px;
+      padding: 7px 16px;
+      font-size: 11px;
+      font-weight: 700;
+      color: #aaa;
+      display: flex;
+      align-items: center;
+      gap: 5px;
+    }
+  </style>
 </head>
+
 <body>
 
-<!-- 1. TOPO -->
-<div class="top-bar">NOVA TENDÊNCIA PARA 2026 ⭐⭐⭐⭐⭐</div>
-<div class="delivery-badge">✅ Entrega imediata via e-mail</div>
+  <!-- 1. TOPO -->
+  <div class="top-bar">NOVA TENDÊNCIA PARA 2026 ⭐⭐⭐⭐⭐</div>
+  <div class="delivery-badge">✅ Entrega imediata via e-mail</div>
 
-<!-- 2. HERO -->
-<section class="hero">
-  <h1><span class="pink">Kit Casinhas de Boneca realista em papel</span> uma opção <u>barata e fácil</u> para tirar as crianças das <u>telas sem brigas</u></h1>
-  <p class="hero-subtitle">Kit Casinhas de Boneca realista em papel com bonecas, guarda-roupa e acessórios</p>
-  <div class="badge-bonus">+6 BÔNUS INCLUSOS</div>
-  <img class="hero-img" src="https://placehold.co/340x270/FFE5F3/E8167A?text=Kit+Casinhas+de+Boneca" alt="Kit Casinhas de Boneca">
-  <p class="hero-sub">
-    Receba o molde de <u>5 casinhas de boneca em papel</u> + <u>bonecas interativas</u> prontas para imprimir e montar.
-    Uma atividade criativa, barata e educativa por apenas <u>R$19,90</u>.
-  </p>
-  <a href="#planos" class="btn-main">QUERO RECEBER AGORA</a>
-  <p class="delivery-small">✅ Entrega imediata</p>
-</section>
+  <!-- 2. HERO -->
+  <section class="hero">
+    <h1><span class="pink">Kit Casinhas de Boneca realista em papel</span> uma opção <u>barata e fácil</u> para tirar as
+      crianças das <u>telas sem brigas</u></h1>
+    <p class="hero-subtitle">Kit Casinhas de Boneca realista em papel com bonecas, guarda-roupa e acessórios</p>
+    <div class="badge-bonus">+6 BÔNUS INCLUSOS</div>
+    <img class="hero-img" src="imagens/hero/c1e0bdfd63bb58dc61a07ef1fb4bd30e.webp" alt="Kit Casinhas de Boneca">
+    <p class="hero-sub">
+      Receba o molde de <u>5 casinhas de boneca em papel</u> + <u>bonecas interativas</u> prontas para imprimir e
+      montar.
+      Uma atividade criativa, barata e educativa por apenas <u>R$10,00</u>.
+    </p>
+    <a href="#planos" class="btn-main">QUERO RECEBER AGORA</a>
+    <p class="delivery-small">✅ Entrega imediata</p>
+  </section>
 
-<!-- 3. CARROSSEL -->
-<section class="section-carousel">
-  <h2 class="carousel-title">ESSE É O EXATO MATERIAL QUE VOCÊ VAI RECEBER</h2>
-  <div class="carousel-wrapper">
-    <button class="car-btn" onclick="carMove(-1)">&#8249;</button>
-    <div class="car-track-wrap">
-      <div class="car-track" id="carTrack">
-        <div class="car-slide"><img src="img1.webp" alt="Vídeoaula montagem"></div>
-        <div class="car-slide"><img src="img2.webp" alt="Muito fácil de montar"></div>
-        <div class="car-slide"><img src="img3.webp" alt="Criança montando kit"></div>
-        <div class="car-slide"><img src="img4.webp" alt="Kit Arrume-se comigo"></div>
-        <div class="car-slide"><img src="img5.webp" alt="Quartos e acessórios"></div>
-        <div class="car-slide"><img src="img6.webp" alt="Kit completo com bônus"></div>
-        <div class="car-slide"><img src="img7.webp" alt="Kit Casinha Trailer"></div>
-        <div class="car-slide"><img src="img8.webp" alt="No papel e montado"></div>
-        <div class="car-slide"><img src="img9.webp" alt="Criança brincando"></div>
-        <div class="car-slide"><img src="img10.webp" alt="Boneca de papel pink"></div>
+  <!-- 3. CARROSSEL -->
+  <section class="section-carousel">
+    <h2 class="carousel-title">ESSE É O EXATO MATERIAL QUE VOCÊ VAI RECEBER</h2>
+    <div class="carousel-wrapper">
+      <button class="car-btn" onclick="carMove(-1)">&#8249;</button>
+      <div class="car-track-wrap">
+        <div class="car-track" id="carTrack">
+          <div class="car-slide"><img src="imagens/carrosel/img1.webp" alt="Vídeoaula montagem"></div>
+          <div class="car-slide"><img src="imagens/carrosel/img2.webp" alt="Muito fácil de montar"></div>
+          <div class="car-slide"><img src="imagens/carrosel/img3.webp" alt="Criança montando kit"></div>
+          <div class="car-slide"><img src="imagens/carrosel/img4.webp" alt="Kit Arrume-se comigo"></div>
+          <div class="car-slide"><img src="imagens/carrosel/img5.webp" alt="Quartos e acessórios"></div>
+          <div class="car-slide"><img src="imagens/carrosel/img6.webp" alt="Kit completo com bônus"></div>
+          <div class="car-slide"><img src="imagens/carrosel/img7.webp" alt="Kit Casinha Trailer"></div>
+          <div class="car-slide"><img src="imagens/carrosel/img8.webp" alt="No papel e montado"></div>
+          <div class="car-slide"><img src="imagens/carrosel/img9.webp" alt="Criança brincando"></div>
+          <div class="car-slide"><img src="imagens/carrosel/img10.webp" alt="Boneca de papel pink"></div>
+        </div>
+      </div>
+      <button class="car-btn" onclick="carMove(1)">&#8250;</button>
+    </div>
+    <div class="car-dots" id="carDots"></div>
+    <div class="car-counter" id="carCounter">1 / 10</div>
+    <p class="carousel-caption">Casinhas completas, coloridas e interativas com bonecas, acessórios e cenários para
+      criar infinitas histórias.</p>
+  </section>
+
+  <!-- 4. CTA STRIP -->
+  <section class="cta-strip">
+    <h2>Ainda hoje você pode reduzir o tempo de tela da sua filha usando apenas papel, tesoura e imaginação.</h2>
+    <a href="#planos" class="btn-white">QUERO RECEBER AGORA</a>
+  </section>
+
+  <!-- 5. IDEAL PARA VOCÊ -->
+  <section class="section-ideal">
+    <h2>IDEAL PARA VOCÊ<br>QUE DESEJA:</h2>
+    <div class="cards-grid">
+      <div class="benefit-card">
+        <span class="icon">📵</span>
+        <h3>Reduzir o tempo de celular sem brigas.</h3>
+        <p>As casinhas ativam o mesmo estímulo de recompensa que o celular, mas de forma saudável. Ao montar sozinha, o
+          cérebro libera satisfação, diminuindo naturalmente a busca pelas telas.</p>
+      </div>
+      <div class="benefit-card">
+        <span class="icon">🎨</span>
+        <h3>Estimular criatividade e imaginação.</h3>
+        <p>Cada casinha vira um cenário aberto. Sem roteiro pronto, ela cria histórias, personagens e situações
+          fortalecendo a imaginação, linguagem e pensamento criativo.</p>
+      </div>
+      <div class="benefit-card">
+        <span class="icon">💰</span>
+        <h3>Gastar pouco com uma atividade educativa.</h3>
+        <p>Você imprime em casa, usa materiais simples e pode reutilizar sempre que quiser. Sem brinquedos caros, sem
+          reposição constante e sem depender de tecnologia.</p>
+      </div>
+      <div class="benefit-card">
+        <span class="icon">💛</span>
+        <h3>Ver sua filha envolvida e feliz.</h3>
+        <p>Quando a criança constrói algo com as próprias mãos, ela sente autonomia. Esse sentimento de 'eu consegui'
+          aumenta o foco, confiança e prolonga o tempo de envolvimento na brincadeira.</p>
       </div>
     </div>
-    <button class="car-btn" onclick="carMove(1)">&#8250;</button>
-  </div>
-  <div class="car-dots" id="carDots"></div>
-  <div class="car-counter" id="carCounter">1 / 10</div>
-  <p class="carousel-caption">Casinhas completas, coloridas e interativas com bonecas, acessórios e cenários para criar infinitas histórias.</p>
-</section>
+  </section>
 
-<!-- 4. CTA STRIP -->
-<section class="cta-strip">
-  <h2>Ainda hoje você pode reduzir o tempo de tela da sua filha usando apenas papel, tesoura e imaginação.</h2>
-  <a href="#planos" class="btn-white">QUERO RECEBER AGORA</a>
-</section>
-
-<!-- 5. IDEAL PARA VOCÊ -->
-<section class="section-ideal">
-  <h2>IDEAL PARA VOCÊ<br>QUE DESEJA:</h2>
-  <div class="cards-grid">
-    <div class="benefit-card">
-      <span class="icon">📵</span>
-      <h3>Reduzir o tempo de celular sem brigas.</h3>
-      <p>As casinhas ativam o mesmo estímulo de recompensa que o celular, mas de forma saudável. Ao montar sozinha, o cérebro libera satisfação, diminuindo naturalmente a busca pelas telas.</p>
+  <!-- 6. TUDO O QUE VOCÊ VAI RECEBER -->
+  <section class="section-receive">
+    <h2>TUDO O QUE VOCÊ VAI RECEBER:</h2>
+    <p class="sub-txt">Receba o molde de <span>5 casinhas de boneca</span> em papel + <span>bonecas interativas</span>
+      prontas para imprimir e montar.</p>
+    <img class="product-img" src="imagens/tudooquevaireceber/01.webp" alt="Kit completo">
+    <div class="checklist-box">
+      <h3>Kit de 5 Casinhas de Boneca realista em Papel</h3>
+      <ul>
+        <li>Kit 5 modelos diferentes de casinhas realistas</li>
+        <li>Kit de 3 Bonecas interativas</li>
+        <li>Acessórios para a casa e para as bonecas</li>
+        <li>Arquivo em PDF pronto para imprimir</li>
+        <li>Pode imprimir quantas vezes quiser</li>
+        <li>Passo a passo de montagem</li>
+        <li>Imagens ilustrativas de montagem</li>
+        <li>Vídeo aula com passo a passo para montar</li>
+        <li>Bordas sinalizadas com "corte aqui" e "cole aqui"</li>
+      </ul>
     </div>
-    <div class="benefit-card">
-      <span class="icon">🎨</span>
-      <h3>Estimular criatividade e imaginação.</h3>
-      <p>Cada casinha vira um cenário aberto. Sem roteiro pronto, ela cria histórias, personagens e situações fortalecendo a imaginação, linguagem e pensamento criativo.</p>
-    </div>
-    <div class="benefit-card">
-      <span class="icon">💰</span>
-      <h3>Gastar pouco com uma atividade educativa.</h3>
-      <p>Você imprime em casa, usa materiais simples e pode reutilizar sempre que quiser. Sem brinquedos caros, sem reposição constante e sem depender de tecnologia.</p>
-    </div>
-    <div class="benefit-card">
-      <span class="icon">💛</span>
-      <h3>Ver sua filha envolvida e feliz.</h3>
-      <p>Quando a criança constrói algo com as próprias mãos, ela sente autonomia. Esse sentimento de 'eu consegui' aumenta o foco, confiança e prolonga o tempo de envolvimento na brincadeira.</p>
-    </div>
-  </div>
-</section>
+    <p class="checklist-more">E muito mais…</p>
+  </section>
 
-<!-- 6. TUDO O QUE VOCÊ VAI RECEBER -->
-<section class="section-receive">
-  <h2>TUDO O QUE VOCÊ VAI RECEBER:</h2>
-  <p class="sub-txt">Receba o molde de <span>5 casinhas de boneca</span> em papel + <span>bonecas interativas</span> prontas para imprimir e montar.</p>
-  <img class="product-img" src="https://placehold.co/340x280/FFE5F3/E8167A?text=Kit+Completo" alt="Kit completo">
-  <div class="checklist-box">
-    <h3>Kit de 5 Casinhas de Boneca realista em Papel</h3>
-    <ul>
-      <li>Kit 5 modelos diferentes de casinhas realistas</li>
-      <li>Kit de 3 Bonecas interativas</li>
-      <li>Acessórios para a casa e para as bonecas</li>
-      <li>Arquivo em PDF pronto para imprimir</li>
-      <li>Pode imprimir quantas vezes quiser</li>
-      <li>Passo a passo de montagem</li>
-      <li>Imagens ilustrativas de montagem</li>
-      <li>Vídeo aula com passo a passo para montar</li>
-      <li>Bordas sinalizadas com "corte aqui" e "cole aqui"</li>
-    </ul>
-  </div>
-  <p class="checklist-more">E muito mais…</p>
-</section>
-
-<!-- 7. BÔNUS -->
-<section class="section-bonus">
-  <p class="bonus-eyebrow">BÔNUS HOJE</p>
-  <h2>E NÃO PARA POR AÍ...</h2>
-  <p class="bonus-sub2">Você também vai receber:</p>
-  <div class="bonus-grid">
-
-    <div class="bonus-card">
-      <img class="bonus-card-img" src="imagens/bonus/bonus1.webp" alt="Kit Boneca Sereia">
-      <div class="bonus-card-body">
-        <span class="b-num">#BÔNUS 01 HOJE</span>
+  <!-- 7. BÔNUS -->
+  <section class="section-bonus">
+    <p class="bonus-eyebrow">BÔNUS HOJE</p>
+    <h2>E NÃO PARA POR AÍ...</h2>
+    <p class="bonus-sub2">Você também vai receber:</p>
+    <div class="bonus-grid">
+      <div class="bonus-card">
+        <img class="b-icon" src="imagens/bonus/bonus1.webp" alt="Bônus 1"
+          style="max-height: 80px; width: 100%; object-fit: contain; padding-bottom: 8px;">
+        <div class="b-num">#BÔNUS 01 HOJE</div>
         <div class="b-title">Kit Boneca Sereia</div>
         <p>Monte uma boneca com a temática Sereia para criar novos cenários.</p>
       </div>
-    </div>
-
-    <div class="bonus-card">
-      <img class="bonus-card-img" src="imagens/bonus/bonus2.webp" alt="Kit Boneca Professora">
-      <div class="bonus-card-body">
-        <span class="b-num">#BÔNUS 02 HOJE</span>
+      <div class="bonus-card">
+        <img class="b-icon" src="imagens/bonus/bonus2.webp" alt="Bônus 2"
+          style="max-height: 80px; width: 100%; object-fit: contain; padding-bottom: 8px;">
+        <div class="b-num">#BÔNUS 02 HOJE</div>
         <div class="b-title">Kit Boneca Professora</div>
         <p>Monte uma nova boneca para estimular novas brincadeiras com as casinhas.</p>
       </div>
-    </div>
-
-    <div class="bonus-card">
-      <img class="bonus-card-img" src="imagens/bonus/bonus3.webp" alt="Kit Maquiagem e Guarda-Roupa">
-      <div class="bonus-card-body">
-        <span class="b-num">#BÔNUS 03 HOJE</span>
+      <div class="bonus-card">
+        <img class="b-icon" src="imagens/bonus/bonus3.webp" alt="Bônus 3"
+          style="max-height: 80px; width: 100%; object-fit: contain; padding-bottom: 8px;">
+        <div class="b-num">#BÔNUS 03 HOJE</div>
         <div class="b-title">Kit Maquiagem e Guarda-Roupa</div>
         <p>Mais acessórios para personalizar as suas bonecas e aumentar o tempo de diversão.</p>
       </div>
-    </div>
-
-    <div class="bonus-card">
-      <img class="bonus-card-img" src="imagens/bonus/bonus4.webp" alt="Vídeo Aula Completa">
-      <div class="bonus-card-body">
-        <span class="b-num">#BÔNUS 04 HOJE</span>
+      <div class="bonus-card">
+        <img class="b-icon" src="imagens/bonus/bonus4.webp" alt="Bônus 4"
+          style="max-height: 80px; width: 100%; object-fit: contain; padding-bottom: 8px;">
+        <div class="b-num">#BÔNUS 04 HOJE</div>
         <div class="b-title">Vídeo Aula Completa</div>
         <p>Coloque sua filha para acompanhar um vídeo com o passo a passo simples para montar todas as casinhas.</p>
       </div>
-    </div>
-
-    <div class="bonus-card">
-      <img class="bonus-card-img" src="imagens/bonus/bonus5.webp" alt="Suporte 24h via WhatsApp">
-      <div class="bonus-card-body">
-        <span class="b-num">#BÔNUS 05 HOJE</span>
+      <div class="bonus-card">
+        <img class="b-icon" src="imagens/bonus/bonus5.webp" alt="Bônus 5"
+          style="max-height: 80px; width: 100%; object-fit: contain; padding-bottom: 8px;">
+        <div class="b-num">#BÔNUS 05 HOJE</div>
         <div class="b-title">Suporte 24h via WhatsApp</div>
         <p>Se precisar de ajuda ou tirar alguma dúvida, não importa a hora, nos envie mensagem.</p>
       </div>
-    </div>
-
-    <div class="bonus-card">
-      <img class="bonus-card-img" src="imagens/bonus/garantia.webp" alt="Garantia Estendida">
-      <div class="bonus-card-body">
-        <span class="b-num">#BÔNUS 06 HOJE</span>
+      <div class="bonus-card">
+        <img class="b-icon" src="imagens/bonus/garantia.webp" alt="Bônus 6"
+          style="max-height: 80px; width: 100%; object-fit: contain; padding-bottom: 8px;">
+        <div class="b-num">#BÔNUS 06 HOJE</div>
         <div class="b-title">Garantia Estendida</div>
         <p>Por lei devemos entregar 7 dias de garantia. Mas disponibilizamos 30 dias para testar sem risco.</p>
       </div>
     </div>
+  </section>
 
-  </div>
-</section>
+  <!-- 8. PLANOS -->
+  <section class="section-plans" id="planos">
+    <h2>ESCOLHA SEU PLANO ⬇️</h2>
+    <p class="plans-sub">Acesso imediato após a confirmação do pagamento</p>
+    <div class="plans-grid">
 
-<!-- 8. PLANOS -->
-<section class="section-plans" id="planos">
-  <h2>ESCOLHA SEU PLANO ⬇️</h2>
-  <p class="plans-sub">Acesso imediato após a confirmação do pagamento</p>
-  <div class="plans-grid">
+      <!-- BÁSICO -->
+      <div class="plan-card basic">
+        <div class="plan-title">PLANO BÁSICO</div>
+        <img class="plan-img" src="imagens/planos/basico10.webp" alt="Plano Básico">
+        <ul class="plan-list">
+          <li>Kit 5 Casinhas de Boneca em Papel em PDF para imprimir</li>
+        </ul>
+        <div class="plan-price">R$10,00</div>
+        <div class="plan-note">ou 3x de R$3,33</div>
+        <button class="btn-plan" onclick="openPopup()">QUERO SOMENTE O BÁSICO</button>
+        <p class="plan-upsell">Temos uma oferta ainda mais vantajosa para você. Veja logo abaixo ⬇️</p>
+      </div>
 
-    <!-- BÁSICO -->
-    <div class="plan-card basic">
-      <div class="plan-title">PLANO BÁSICO</div>
-      <img class="plan-img" src="https://placehold.co/130x110/f0f0f0/888?text=Básico" alt="Plano Básico">
-      <ul class="plan-list">
-        <li>Kit 5 Casinhas de Boneca em Papel em PDF para imprimir</li>
-      </ul>
-      <div class="plan-price">R$10,00</div>
-      <div class="plan-note">ou 3x de R$3,33</div>
-      <button class="btn-plan" onclick="openPopup()">QUERO SOMENTE O BÁSICO</button>
-      <p class="plan-upsell">Temos uma oferta ainda mais vantajosa para você. Veja logo abaixo ⬇️</p>
+      <!-- COMPLETO -->
+      <div class="plan-card complete">
+        <div class="plan-top-badge">⭐ MAIS VENDIDO</div>
+        <div class="plan-title">PLANO COMPLETO COM TODOS OS BÔNUS</div>
+        <img class="plan-img" src="imagens/planos/27,90.webp" alt="Plano Completo">
+        <ul class="plan-list">
+          <li>Kit 5 Casinhas exclusivas ultra realistas</li>
+          <li>Acessórios das casinhas</li>
+          <li>Kit Boneca Sereia + Acessórios</li>
+          <li>Kit Boneca Professora + Acessórios</li>
+          <li>Kit Maquiagem e Guarda Roupa</li>
+          <li>Vídeo Aula completa com passo a passo</li>
+          <li>Suporte 24h por WhatsApp</li>
+          <li>Garantia estendida de 30 dias</li>
+        </ul>
+        <div class="plan-old">De R$97,90</div>
+        <div style="font-size:13px;color:#888;margin-bottom:4px;">Por apenas:</div>
+        <div class="plan-price">R$27,90</div>
+        <div class="plan-savings">Você economiza R$70,00</div>
+        <button class="btn-plan">QUERO O PLANO COMPLETO</button>
+        <p class="plan-promo">🔥 Oferta promocional por tempo limitado.</p>
+      </div>
+
     </div>
+  </section>
 
-    <!-- COMPLETO -->
-    <div class="plan-card complete">
-      <div class="plan-top-badge">⭐ MAIS VENDIDO</div>
-      <div class="plan-title">PLANO COMPLETO COM TODOS OS BÔNUS</div>
-      <img class="plan-img" src="https://placehold.co/130x110/FFE5F3/E8167A?text=Completo" alt="Plano Completo">
-      <ul class="plan-list">
-        <li>Kit 5 Casinhas exclusivas ultra realistas</li>
-        <li>Acessórios das casinhas</li>
-        <li>Kit Boneca Sereia + Acessórios</li>
-        <li>Kit Boneca Professora + Acessórios</li>
-        <li>Kit Maquiagem e Guarda Roupa</li>
-        <li>Vídeo Aula completa com passo a passo</li>
-        <li>Suporte 24h por WhatsApp</li>
-        <li>Garantia estendida de 30 dias</li>
-      </ul>
-      <div class="plan-old">De R$97,90</div>
-      <div style="font-size:13px;color:#888;margin-bottom:4px;">Por apenas:</div>
-      <div class="plan-price">R$27,90</div>
-      <div class="plan-savings">Você economiza R$70,00</div>
-      <button class="btn-plan">QUERO O PLANO COMPLETO</button>
-      <p class="plan-promo">🔥 Oferta promocional por tempo limitado.</p>
-    </div>
-
-  </div>
-</section>
-
-<!-- POP-UP DOWNSELL -->
-<div class="popup-overlay" id="popupOverlay">
-  <div class="popup-box">
-    <button class="popup-close" onclick="closePopup()">✕</button>
-    <div class="popup-warn">⚠️</div>
-    <div class="popup-title">ESPERA!<br>NÃO LEVE SÓ METADE...</div>
-    <p class="popup-body">
-      Aproveite agora: Leve o <strong>PLANO COMPLETO</strong>
-      (com todos os bônus e aulas) de <s>R$27,90</s> por apenas
-      <strong>R$19,90</strong>!
-    </p>
-    <button class="btn-popup-yes">SIM! QUERO TUDO POR R$19,90</button>
-    <button class="btn-popup-no" onclick="closePopup()">Não, prefiro levar só o básico por R$10</button>
-  </div>
-</div>
-
-<!-- 9. GARANTIA -->
-<section class="section-guarantee">
-  <div class="guarantee-wrap">
-    <div class="guarantee-icon">🏅</div>
-    <div>
-      <h3>RISCO ZERO: GARANTIA INCONDICIONAL DE 30 DIAS!</h3>
-      <p>Se em até 30 dias você não amar o material, devolvemos 100% do seu dinheiro. Sem perguntas. O seu risco por tentar é zero!</p>
+  <!-- POP-UP DOWNSELL -->
+  <div class="popup-overlay" id="popupOverlay">
+    <div class="popup-box">
+      <button class="popup-close" onclick="closePopup()">✕</button>
+      <div class="popup-warn">⚠️</div>
+      <div class="popup-title">ESPERA!<br>NÃO LEVE SÓ METADE...</div>
+      <p class="popup-body">
+        Aproveite agora: Leve o <strong>PLANO COMPLETO</strong>
+        (com todos os bônus e aulas) de <s>R$27,90</s> por apenas
+        <strong>R$19,90</strong>!
+      </p>
+      <button class="btn-popup-yes">SIM! QUERO TUDO POR R$19,90</button>
+      <button class="btn-popup-no" onclick="closePopup()">Não, prefiro levar só o básico por R$10</button>
     </div>
   </div>
-</section>
 
-<!-- 10. DEPOIMENTOS -->
-<section class="section-testi">
-  <h2>💬 O Que as Mães Estão Dizendo</h2>
-  <p class="testi-sub">Mais de 3.000 famílias já transformaram o tempo de lazer das suas filhas</p>
-  <div class="testi-grid">
+  <!-- 9. GARANTIA -->
+  <section class="section-guarantee">
+    <div class="guarantee-wrap">
+      <img src="imagens/garantiasessao/garantia-sessao.png" alt="Garantia" class="guarantee-icon"
+        style="max-width: 100px;">
+      <div>
+        <h3>RISCO ZERO: GARANTIA INCONDICIONAL DE 30 DIAS!</h3>
+        <p>Se em até 30 dias você não amar o material, devolvemos 100% do seu dinheiro. Sem perguntas. O seu risco por
+          tentar é zero!</p>
+      </div>
+    </div>
+  </section>
 
-    <div class="testi-card">
-      <div class="testi-stars">⭐⭐⭐⭐⭐</div>
-      <p class="testi-text">"Minha filha largou o tablet sozinha! Ela ficou horas montando as casinhas e no dia seguinte pediu para fazer de novo. Nunca vi ela tão concentrada e feliz. Vale muito a pena — já indiquei para todas as amigas!"</p>
-      <div class="testi-footer">
-        <div class="testi-avatar" style="background:linear-gradient(135deg,#E8167A,#c0116a);">M</div>
-        <div>
-          <div class="testi-name">Mariana Silva</div>
-          <div class="testi-loc">📍 Campinas – SP</div>
+  <!-- 10. DEPOIMENTOS -->
+  <section class="section-testi">
+    <h2>💬 O Que as Mães Estão Dizendo</h2>
+    <p class="testi-sub">Mais de 3.000 famílias já transformaram o tempo de lazer das suas filhas</p>
+    <div class="testi-grid">
+
+      <div class="testi-card">
+        <div class="testi-stars">⭐⭐⭐⭐⭐</div>
+        <p class="testi-text">"Minha filha largou o tablet sozinha! Ela ficou horas montando as casinhas e no dia
+          seguinte pediu para fazer de novo. Nunca vi ela tão concentrada e feliz. Vale muito a pena já indiquei para
+          todas as amigas!"</p>
+        <div class="testi-footer">
+          <img class="testi-avatar" src="imagens/depoimentos/dep1.png" alt="Mariana Silva" style="object-fit: cover;">
+          <div>
+            <div class="testi-name">Mariana Silva</div>
+            <div class="testi-loc">📍 Campinas – SP</div>
+          </div>
+        </div>
+        <div class="testi-verified">✅ Compra verificada</div>
+      </div>
+
+      <div class="testi-card">
+        <div class="testi-stars">⭐⭐⭐⭐⭐</div>
+        <p class="testi-text">"Cores lindas e muito fácil de montar! Minha filha de 7 anos montou quase sozinha
+          assistindo ao vídeo. Os bônus da Sereia são o máximo ela cria histórias diferentes todos os dias!"</p>
+        <div class="testi-footer">
+          <img class="testi-avatar" src="imagens/depoimentos/dep2.png" alt="Fernanda Oliveira"
+            style="object-fit: cover;">
+          <div>
+            <div class="testi-name">Fernanda Oliveira</div>
+            <div class="testi-loc">📍 Curitiba – PR</div>
+          </div>
+        </div>
+        <div class="testi-verified">✅ Compra verificada</div>
+      </div>
+
+      <div class="testi-card">
+        <div class="testi-stars">⭐⭐⭐⭐⭐</div>
+        <p class="testi-text">"Atividade perfeita! Imprimi no papel 180g como indicado e ficou incrível. O suporte no
+          WhatsApp me ajudou rapidinho com uma dúvida sobre a impressão. Superou todas as minhas expectativas!"</p>
+        <div class="testi-footer">
+          <img class="testi-avatar" src="imagens/depoimentos/dep3.jpg" alt="Beatriz Cavalcante"
+            style="object-fit: cover;">
+          <div>
+            <div class="testi-name">Beatriz Cavalcante</div>
+            <div class="testi-loc">📍 Fortaleza – CE</div>
+          </div>
+        </div>
+        <div class="testi-verified">✅ Compra verificada</div>
+      </div>
+
+    </div>
+    <div class="testi-stats">
+      <div class="testi-stat"><span class="snum">3.000+</span>
+        <div class="slabel">famílias atendidas</div>
+      </div>
+      <div class="testi-stat"><span class="snum">⭐ 4,9</span>
+        <div class="slabel">avaliação média</div>
+      </div>
+      <div class="testi-stat"><span class="snum">98%</span>
+        <div class="slabel">recomendam</div>
+      </div>
+    </div>
+  </section>
+
+  <!-- 11. FAQ -->
+  <section class="section-faq">
+    <h2>PERGUNTAS FREQUENTES</h2>
+    <div class="faq-list">
+      <div class="faq-item">
+        <button class="faq-q" onclick="toggleFaq(this)">É seguro? <span class="plus">+</span></button>
+        <div class="faq-a">
+          <div class="faq-a-inner">Sim! O pagamento é processado por uma plataforma 100% segura e criptografada. Seus
+            dados ficam totalmente protegidos.</div>
         </div>
       </div>
-      <div class="testi-verified">✅ Compra verificada</div>
-    </div>
-
-    <div class="testi-card">
-      <div class="testi-stars">⭐⭐⭐⭐⭐</div>
-      <p class="testi-text">"Cores lindas e muito fácil de montar! Minha filha de 7 anos montou quase sozinha assistindo ao vídeo. Os bônus da Sereia são o máximo — ela cria histórias diferentes todos os dias!"</p>
-      <div class="testi-footer">
-        <div class="testi-avatar" style="background:linear-gradient(135deg,#a855f7,#7c3aed);">F</div>
-        <div>
-          <div class="testi-name">Fernanda Oliveira</div>
-          <div class="testi-loc">📍 Curitiba – PR</div>
+      <div class="faq-item">
+        <button class="faq-q" onclick="toggleFaq(this)">Preciso comprar algo extra? <span class="plus">+</span></button>
+        <div class="faq-a">
+          <div class="faq-a-inner">Apenas papel e tesoura! Recomendamos papel de gramatura 180g para ficar mais firme,
+            mas papel comum também funciona bem.</div>
         </div>
       </div>
-      <div class="testi-verified">✅ Compra verificada</div>
-    </div>
-
-    <div class="testi-card">
-      <div class="testi-stars">⭐⭐⭐⭐⭐</div>
-      <p class="testi-text">"Atividade perfeita! Imprimi no papel 180g como indicado e ficou incrível. O suporte no WhatsApp me ajudou rapidinho com uma dúvida sobre a impressão. Superou todas as minhas expectativas!"</p>
-      <div class="testi-footer">
-        <div class="testi-avatar" style="background:linear-gradient(135deg,#00A859,#007a3d);">B</div>
-        <div>
-          <div class="testi-name">Beatriz Cavalcante</div>
-          <div class="testi-loc">📍 Fortaleza – CE</div>
+      <div class="faq-item">
+        <button class="faq-q" onclick="toggleFaq(this)">Minha filha consegue montar sozinha? <span
+            class="plus">+</span></button>
+        <div class="faq-a">
+          <div class="faq-a-inner">Sim! O kit vem com vídeo aula e bordas sinalizadas com "corte aqui" e "cole aqui".
+            Indicado para crianças a partir de 5 anos. Menores podem participar com ajuda de um adulto.</div>
         </div>
       </div>
-      <div class="testi-verified">✅ Compra verificada</div>
+      <div class="faq-item">
+        <button class="faq-q" onclick="toggleFaq(this)">Posso imprimir mais de uma vez? <span
+            class="plus">+</span></button>
+        <div class="faq-a">
+          <div class="faq-a-inner">Sim! O acesso é vitalício. Você pode imprimir quantas vezes quiser, sempre que
+            precisar.</div>
+        </div>
+      </div>
+      <div class="faq-item">
+        <button class="faq-q" onclick="toggleFaq(this)">É indicado para qual idade? <span class="plus">+</span></button>
+        <div class="faq-a">
+          <div class="faq-a-inner">Ideal para crianças de 5 a 12 anos. Crianças menores podem participar com a
+            supervisão de um adulto.</div>
+        </div>
+      </div>
+      <div class="faq-item">
+        <button class="faq-q" onclick="toggleFaq(this)">Recebo como? <span class="plus">+</span></button>
+        <div class="faq-a">
+          <div class="faq-a-inner">O link de acesso é enviado instantaneamente no seu e-mail após a confirmação do
+            pagamento. Verifique também a caixa de spam.</div>
+        </div>
+      </div>
     </div>
+  </section>
 
-  </div>
-  <div class="testi-stats">
-    <div class="testi-stat"><span class="snum">3.000+</span><div class="slabel">famílias atendidas</div></div>
-    <div class="testi-stat"><span class="snum">⭐ 4,9</span><div class="slabel">avaliação média</div></div>
-    <div class="testi-stat"><span class="snum">98%</span><div class="slabel">recomendam</div></div>
-  </div>
-</section>
+  <!-- 12. RODAPÉ -->
+  <footer>
+    <p class="f-crime">PIRATARIA É CRIME.</p>
+    <p>Proibido a comercialização desse produto fora dessa página. Denuncie.</p>
+    <p>Todos os direitos reservados a Tuto Biblioteca digital.</p>
+    <p style="margin-top:6px;">Compra 100% segura. Garantia de 7 ou 30 dias conforme plano escolhido.</p>
+    <div class="f-badges">
+      <div class="f-badge">🔒 Compra Segura</div>
+      <div class="f-badge">🛡️ SSL Encrypted</div>
+    </div>
+  </footer>
 
-<!-- 11. FAQ -->
-<section class="section-faq">
-  <h2>PERGUNTAS FREQUENTES</h2>
-  <div class="faq-list">
-    <div class="faq-item">
-      <button class="faq-q" onclick="toggleFaq(this)">É seguro? <span class="plus">+</span></button>
-      <div class="faq-a"><div class="faq-a-inner">Sim! O pagamento é processado por uma plataforma 100% segura e criptografada. Seus dados ficam totalmente protegidos.</div></div>
-    </div>
-    <div class="faq-item">
-      <button class="faq-q" onclick="toggleFaq(this)">Preciso comprar algo extra? <span class="plus">+</span></button>
-      <div class="faq-a"><div class="faq-a-inner">Apenas papel e tesoura! Recomendamos papel de gramatura 180g para ficar mais firme, mas papel comum também funciona bem.</div></div>
-    </div>
-    <div class="faq-item">
-      <button class="faq-q" onclick="toggleFaq(this)">Minha filha consegue montar sozinha? <span class="plus">+</span></button>
-      <div class="faq-a"><div class="faq-a-inner">Sim! O kit vem com vídeo aula e bordas sinalizadas com "corte aqui" e "cole aqui". Indicado para crianças a partir de 5 anos. Menores podem participar com ajuda de um adulto.</div></div>
-    </div>
-    <div class="faq-item">
-      <button class="faq-q" onclick="toggleFaq(this)">Posso imprimir mais de uma vez? <span class="plus">+</span></button>
-      <div class="faq-a"><div class="faq-a-inner">Sim! O acesso é vitalício. Você pode imprimir quantas vezes quiser, sempre que precisar.</div></div>
-    </div>
-    <div class="faq-item">
-      <button class="faq-q" onclick="toggleFaq(this)">É indicado para qual idade? <span class="plus">+</span></button>
-      <div class="faq-a"><div class="faq-a-inner">Ideal para crianças de 5 a 12 anos. Crianças menores podem participar com a supervisão de um adulto.</div></div>
-    </div>
-    <div class="faq-item">
-      <button class="faq-q" onclick="toggleFaq(this)">Recebo como? <span class="plus">+</span></button>
-      <div class="faq-a"><div class="faq-a-inner">O link de acesso é enviado instantaneamente no seu e-mail após a confirmação do pagamento. Verifique também a caixa de spam.</div></div>
-    </div>
-  </div>
-</section>
+  <script>
+    /* CARROSSEL */
+    let carIdx = 0;
+    const carTotal = 10;
+    const carTrackEl = document.getElementById('carTrack');
+    const carDotsEl = document.getElementById('carDots');
+    const carCounterEl = document.getElementById('carCounter');
+    for (let i = 0; i < carTotal; i++) {
+      const d = document.createElement('span');
+      d.className = 'car-dot' + (i === 0 ? ' active' : '');
+      d.onclick = () => carGoTo(i);
+      carDotsEl.appendChild(d);
+    }
+    function carGoTo(n) {
+      carIdx = (n + carTotal) % carTotal;
+      carTrackEl.style.transform = 'translateX(-' + (carIdx * 100) + '%)';
+      carCounterEl.textContent = (carIdx + 1) + ' / ' + carTotal;
+      document.querySelectorAll('.car-dot').forEach(function (d, i) { d.classList.toggle('active', i === carIdx); });
+    }
+    function carMove(dir) { carGoTo(carIdx + dir); }
+    setInterval(function () { carMove(1); }, 3500);
 
-<!-- 12. RODAPÉ -->
-<footer>
-  <p class="f-crime">PIRATARIA É CRIME.</p>
-  <p>Proibido a comercialização desse produto fora dessa página. Denuncie.</p>
-  <p>Todos os direitos reservados a Tuto Biblioteca digital.</p>
-  <p style="margin-top:6px;">Compra 100% segura. Garantia de 7 ou 30 dias conforme plano escolhido.</p>
-  <div class="f-badges">
-    <div class="f-badge">🔒 Compra Segura</div>
-    <div class="f-badge">🛡️ SSL Encrypted</div>
-  </div>
-</footer>
+    /* FAQ */
+    function toggleFaq(btn) {
+      btn.classList.toggle('open');
+      btn.nextElementSibling.classList.toggle('open');
+    }
 
-<script>
-  /* CARROSSEL */
-  let carIdx = 0;
-  const carTotal = 10;
-  const carTrackEl = document.getElementById('carTrack');
-  const carDotsEl  = document.getElementById('carDots');
-  const carCounterEl = document.getElementById('carCounter');
-  for (let i = 0; i < carTotal; i++) {
-    const d = document.createElement('span');
-    d.className = 'car-dot' + (i === 0 ? ' active' : '');
-    d.onclick = () => carGoTo(i);
-    carDotsEl.appendChild(d);
-  }
-  function carGoTo(n) {
-    carIdx = (n + carTotal) % carTotal;
-    carTrackEl.style.transform = 'translateX(-' + (carIdx * 100) + '%)';
-    carCounterEl.textContent = (carIdx + 1) + ' / ' + carTotal;
-    document.querySelectorAll('.car-dot').forEach(function(d,i){ d.classList.toggle('active', i === carIdx); });
-  }
-  function carMove(dir) { carGoTo(carIdx + dir); }
-  setInterval(function(){ carMove(1); }, 3500);
-
-  /* FAQ */
-  function toggleFaq(btn) {
-    btn.classList.toggle('open');
-    btn.nextElementSibling.classList.toggle('open');
-  }
-
-  /* POP-UP */
-  function openPopup()  { document.getElementById('popupOverlay').classList.add('active'); }
-  function closePopup() { document.getElementById('popupOverlay').classList.remove('active'); }
-  document.getElementById('popupOverlay').addEventListener('click', function(e) {
-    if (e.target === this) closePopup();
-  });
-</script>
+    /* POP-UP */
+    function openPopup() { document.getElementById('popupOverlay').classList.add('active'); }
+    function closePopup() { document.getElementById('popupOverlay').classList.remove('active'); }
+    document.getElementById('popupOverlay').addEventListener('click', function (e) {
+      if (e.target === this) closePopup();
+    });
+  </script>
 </body>
+
 </html>
+EOF
+echo "done"
