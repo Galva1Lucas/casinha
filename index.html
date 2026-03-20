@@ -15,7 +15,20 @@
     async defer></script>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Kit Casinhas de Boneca – Tuto Biblioteca Digital</title>
+  <title>Kit Casinhas de Boneca – Biblioteca Digital</title>
+
+  <!-- META TAGS SEO & OPEN GRAPH -->
+  <meta name="description" content="Kit Casinhas de Boneca realista em papel com bonecas, guarda-roupa e acessórios. Atividade criativa, barata e educativa para tirar as crianças das telas. Entrega imediata por e-mail.">
+  <meta property="og:type" content="website">
+  <meta property="og:title" content="Kit Casinhas de Boneca – Biblioteca Digital">
+  <meta property="og:description" content="5 casinhas de boneca em papel + bonecas interativas prontas para imprimir e montar. Por apenas R$10,00. Entrega imediata!">
+  <meta property="og:image" content="imagens/hero/c1e0bdfd63bb58dc61a07ef1fb4bd30e.webp">
+  <meta property="og:locale" content="pt_BR">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="Kit Casinhas de Boneca – Biblioteca Digital">
+  <meta name="twitter:description" content="5 casinhas de boneca em papel + bonecas interativas prontas para imprimir e montar. Por apenas R$10,00!">
+  <meta name="twitter:image" content="imagens/hero/c1e0bdfd63bb58dc61a07ef1fb4bd30e.webp">
+
   <link
     href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;600;700;800;900&family=Montserrat:wght@700;800;900&display=swap"
     rel="stylesheet">
@@ -25,6 +38,7 @@
       --pink: #E8167A;
       --orange: #FF6B00;
       --yellow: #FFD600;
+      --dark-bg: #1A0A2E;
     }
 
     * {
@@ -147,15 +161,8 @@
     }
 
     @keyframes pulse {
-
-      0%,
-      100% {
-        box-shadow: 0 4px 20px rgba(0, 168, 89, 0.35);
-      }
-
-      50% {
-        box-shadow: 0 6px 32px rgba(0, 168, 89, 0.6);
-      }
+      0%, 100% { box-shadow: 0 4px 20px rgba(0, 168, 89, 0.35); }
+      50% { box-shadow: 0 6px 32px rgba(0, 168, 89, 0.6); }
     }
 
     .delivery-small {
@@ -334,9 +341,7 @@
     }
 
     @media(max-width:500px) {
-      .cards-grid {
-        grid-template-columns: 1fr;
-      }
+      .cards-grid { grid-template-columns: 1fr; }
     }
 
     .benefit-card {
@@ -419,9 +424,7 @@
       text-align: center;
     }
 
-    .checklist-box ul {
-      list-style: none;
-    }
+    .checklist-box ul { list-style: none; }
 
     .checklist-box li {
       font-size: 14px;
@@ -485,9 +488,7 @@
     }
 
     @media(max-width:520px) {
-      .bonus-grid {
-        grid-template-columns: 1fr 1fr;
-      }
+      .bonus-grid { grid-template-columns: 1fr 1fr; }
     }
 
     .bonus-card {
@@ -498,10 +499,7 @@
       text-align: center;
     }
 
-    .b-icon {
-      font-size: 34px;
-      margin-bottom: 8px;
-    }
+    .b-icon { font-size: 34px; margin-bottom: 8px; }
 
     .b-num {
       font-size: 10px;
@@ -525,11 +523,41 @@
       line-height: 1.45;
     }
 
-    /* PLANOS */
+    /* ======================================
+       PLANOS — layout mobile em coluna única
+       ====================================== */
     .section-plans {
-      background: #fff;
       padding: 52px 20px;
       text-align: center;
+    }
+
+    /* Plano básico: fundo branco normal */
+    .section-plans-basic {
+      background: #fff;
+      padding: 52px 20px 0;
+      text-align: center;
+    }
+
+    /* Plano completo: fundo roxo escuro premium */
+    .section-plans-complete {
+      background: var(--dark-bg);
+      padding: 52px 20px 60px;
+      text-align: center;
+      position: relative;
+      overflow: hidden;
+    }
+
+    /* Detalhe decorativo de brilho no canto */
+    .section-plans-complete::before {
+      content: '';
+      position: absolute;
+      top: -80px;
+      left: 50%;
+      transform: translateX(-50%);
+      width: 300px;
+      height: 300px;
+      background: radial-gradient(circle, rgba(232,22,122,0.25) 0%, transparent 70%);
+      pointer-events: none;
     }
 
     .section-plans h2 {
@@ -540,10 +568,79 @@
       margin-bottom: 8px;
     }
 
+    .section-plans-complete .plans-title-dark {
+      font-family: 'Montserrat', sans-serif;
+      font-size: clamp(22px, 4.5vw, 32px);
+      font-weight: 900;
+      color: #fff;
+      margin-bottom: 8px;
+    }
+
     .plans-sub {
       font-size: 13px;
       color: #888;
       margin-bottom: 32px;
+    }
+
+    .plans-sub-dark {
+      font-size: 13px;
+      color: rgba(255,255,255,0.6);
+      margin-bottom: 32px;
+    }
+
+    /* Indicador "tem mais abaixo" */
+    .scroll-hint {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 6px;
+      padding: 24px 0 32px;
+      color: var(--pink);
+      font-weight: 800;
+      font-size: 14px;
+    }
+
+    .scroll-hint-arrow {
+      width: 32px;
+      height: 32px;
+      border: 3px solid var(--pink);
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 18px;
+      animation: bounce 1.4s ease-in-out infinite;
+    }
+
+    @keyframes bounce {
+      0%, 100% { transform: translateY(0); }
+      50% { transform: translateY(6px); }
+    }
+
+    /* Faixa divisora entre básico e completo */
+    .plans-divider {
+      background: var(--dark-bg);
+      padding: 18px 20px;
+      text-align: center;
+    }
+
+    .plans-divider-inner {
+      display: inline-flex;
+      align-items: center;
+      gap: 12px;
+      background: rgba(232,22,122,0.15);
+      border: 1px solid rgba(232,22,122,0.4);
+      border-radius: 30px;
+      padding: 8px 20px;
+    }
+
+    .plans-divider-inner span {
+      font-family: 'Montserrat', sans-serif;
+      font-weight: 900;
+      font-size: 13px;
+      color: var(--pink);
+      text-transform: uppercase;
+      letter-spacing: 0.5px;
     }
 
     .plans-grid {
@@ -555,9 +652,7 @@
     }
 
     @media(max-width:520px) {
-      .plans-grid {
-        grid-template-columns: 1fr;
-      }
+      .plans-grid { grid-template-columns: 1fr; }
     }
 
     .plan-card {
@@ -568,13 +663,12 @@
       position: relative;
     }
 
-    .plan-card.basic {
-      background: #fafafa;
-    }
+    .plan-card.basic { background: #fafafa; }
 
     .plan-card.complete {
-      background: #fff0f7;
+      background: rgba(255,255,255,0.07);
       border-color: var(--pink);
+      backdrop-filter: blur(8px);
     }
 
     .plan-top-badge {
@@ -602,9 +696,7 @@
       line-height: 1.3;
     }
 
-    .plan-card.complete .plan-title {
-      color: var(--pink);
-    }
+    .plan-card.complete .plan-title { color: #fff; }
 
     .plan-img {
       max-width: 130px;
@@ -628,6 +720,8 @@
       align-items: flex-start;
     }
 
+    .plan-card.complete .plan-list li { color: rgba(255,255,255,0.85); }
+
     .plan-list li::before {
       content: "✅";
       flex-shrink: 0;
@@ -643,7 +737,7 @@
 
     .plan-old {
       font-size: 13px;
-      color: #bbb;
+      color: rgba(255,255,255,0.5);
       text-decoration: line-through;
       margin-bottom: 2px;
     }
@@ -655,19 +749,16 @@
       margin-bottom: 4px;
     }
 
-    .plan-card.basic .plan-price {
-      color: var(--green);
-    }
-
-    .plan-card.complete .plan-price {
-      color: var(--pink);
-    }
+    .plan-card.basic .plan-price { color: var(--green); }
+    .plan-card.complete .plan-price { color: #fff; }
 
     .plan-note {
       font-size: 12px;
       color: #888;
       margin-bottom: 14px;
     }
+
+    .plan-card.complete .plan-note { color: rgba(255,255,255,0.55); }
 
     .plan-savings {
       display: inline-block;
@@ -696,15 +787,25 @@
       box-shadow: 0 4px 16px rgba(0, 168, 89, 0.3);
     }
 
-    .btn-plan:hover {
-      transform: translateY(-2px);
+    .btn-plan:hover { transform: translateY(-2px); }
+
+    .plan-card.complete .btn-plan {
+      background: var(--pink);
+      box-shadow: 0 4px 24px rgba(232, 22, 122, 0.5);
     }
 
     .plan-promo {
       font-size: 11px;
-      color: var(--orange);
+      color: rgba(255,255,255,0.7);
       margin-top: 10px;
       font-weight: 700;
+    }
+
+    /* Label de preço "por apenas" no plano completo */
+    .plan-por-apenas {
+      font-size: 13px;
+      color: rgba(255,255,255,0.6);
+      margin-bottom: 4px;
     }
 
     /* POP-UP */
@@ -719,9 +820,7 @@
       padding: 20px;
     }
 
-    .popup-overlay.active {
-      display: flex;
-    }
+    .popup-overlay.active { display: flex; }
 
     .popup-box {
       background: #fff;
@@ -735,15 +834,8 @@
     }
 
     @keyframes popIn {
-      from {
-        transform: scale(0.85);
-        opacity: 0;
-      }
-
-      to {
-        transform: scale(1);
-        opacity: 1;
-      }
+      from { transform: scale(0.85); opacity: 0; }
+      to { transform: scale(1); opacity: 1; }
     }
 
     .popup-close {
@@ -757,10 +849,7 @@
       color: #888;
     }
 
-    .popup-warn {
-      font-size: 44px;
-      margin-bottom: 10px;
-    }
+    .popup-warn { font-size: 44px; margin-bottom: 10px; }
 
     .popup-title {
       font-family: 'Montserrat', sans-serif;
@@ -778,14 +867,8 @@
       margin-bottom: 22px;
     }
 
-    .popup-body s {
-      color: #bbb;
-    }
-
-    .popup-body strong {
-      color: var(--pink);
-      font-size: 22px;
-    }
+    .popup-body s { color: #bbb; }
+    .popup-body strong { color: var(--pink); font-size: 22px; }
 
     .btn-popup-yes {
       display: block;
@@ -804,9 +887,7 @@
       transition: transform 0.15s;
     }
 
-    .btn-popup-yes:hover {
-      transform: translateY(-2px);
-    }
+    .btn-popup-yes:hover { transform: translateY(-2px); }
 
     .btn-popup-no {
       background: none;
@@ -837,16 +918,10 @@
     }
 
     @media(max-width:500px) {
-      .guarantee-wrap {
-        flex-direction: column;
-        text-align: center;
-      }
+      .guarantee-wrap { flex-direction: column; text-align: center; }
     }
 
-    .guarantee-icon {
-      font-size: 72px;
-      flex-shrink: 0;
-    }
+    .guarantee-icon { font-size: 72px; flex-shrink: 0; }
 
     .guarantee-wrap h3 {
       font-family: 'Montserrat', sans-serif;
@@ -893,15 +968,11 @@
     }
 
     @media(max-width:640px) {
-      .testi-grid {
-        grid-template-columns: 1fr;
-      }
+      .testi-grid { grid-template-columns: 1fr; }
     }
 
     @media(min-width:641px) and (max-width:820px) {
-      .testi-grid {
-        grid-template-columns: 1fr 1fr;
-      }
+      .testi-grid { grid-template-columns: 1fr 1fr; }
     }
 
     .testi-card {
@@ -1006,9 +1077,7 @@
       color: #fff;
     }
 
-    .testi-stat+.testi-stat {
-      border-left: 1px solid rgba(255, 255, 255, 0.25);
-    }
+    .testi-stat + .testi-stat { border-left: 1px solid rgba(255, 255, 255, 0.25); }
 
     .snum {
       font-family: 'Montserrat', sans-serif;
@@ -1017,11 +1086,7 @@
       display: block;
     }
 
-    .slabel {
-      font-size: 11px;
-      opacity: 0.85;
-      margin-top: 2px;
-    }
+    .slabel { font-size: 11px; opacity: 0.85; margin-top: 2px; }
 
     /* FAQ */
     .section-faq {
@@ -1076,9 +1141,7 @@
       margin-left: 12px;
     }
 
-    .faq-q.open .plus {
-      transform: rotate(45deg);
-    }
+    .faq-q.open .plus { transform: rotate(45deg); }
 
     .faq-a {
       max-height: 0;
@@ -1089,13 +1152,8 @@
       line-height: 1.65;
     }
 
-    .faq-a.open {
-      max-height: 200px;
-    }
-
-    .faq-a-inner {
-      padding: 0 20px 16px;
-    }
+    .faq-a.open { max-height: 200px; }
+    .faq-a-inner { padding: 0 20px 16px; }
 
     /* FOOTER */
     footer {
@@ -1140,330 +1198,91 @@
       gap: 5px;
     }
 
-    /* OVERRIDES PARA AUMENTAR TAMANHOS E FOCAR EM MOBILE */
-    body {
-      font-size: 16px;
-    }
-
-    .top-bar {
-      font-size: 16px;
-      padding: 12px 16px;
-    }
-
-    .delivery-badge {
-      font-size: 15px;
-      padding: 10px;
-    }
-
-    .hero h1 {
-      font-size: clamp(26px, 8vw, 40px);
-    }
-
-    .hero-subtitle {
-      font-size: 17px;
-    }
-
-    .badge-bonus {
-      font-size: 15px;
-      padding: 8px 24px;
-    }
-
-    .hero-sub {
-      font-size: 17px;
-    }
-
-    .btn-main {
-      font-size: 20px;
-      padding: 20px 42px;
-      width: 100%;
-      border-radius: 12px;
-    }
-
-    .delivery-small {
-      font-size: 14px;
-    }
-
-    .carousel-title {
-      font-size: clamp(22px, 6vw, 30px);
-    }
-
-    .carousel-caption {
-      font-size: 16px;
-    }
-
-    .cta-strip h2 {
-      font-size: clamp(22px, 6vw, 32px);
-      line-height: 1.4;
-    }
-
-    .btn-white {
-      font-size: 18px;
-      padding: 18px 40px;
-      width: 100%;
-      border-radius: 12px;
-    }
-
-    .section-ideal h2 {
-      font-size: clamp(26px, 7vw, 36px);
-    }
-
-    .benefit-card h3 {
-      font-size: 18px;
-    }
-
-    .benefit-card p {
-      font-size: 16px;
-    }
-
-    .section-receive h2 {
-      font-size: clamp(24px, 6vw, 32px);
-    }
-
-    .section-receive .sub-txt {
-      font-size: 17px;
-    }
-
-    .checklist-box h3 {
-      font-size: 18px;
-      margin-bottom: 18px;
-    }
-
-    .checklist-box li {
-      font-size: 16px;
-      padding: 8px 0;
-    }
-
-    .checklist-more {
-      font-size: 16px;
-    }
-
-    /* BONUS HIGHLIGHTED FOR MOBILE */
-    .bonus-eyebrow {
-      font-size: 16px;
-    }
-
-    .section-bonus h2 {
-      font-size: clamp(28px, 8vw, 40px);
-      color: var(--pink);
-      margin-bottom: 12px;
-    }
-
-    .bonus-sub2 {
-      font-size: 18px;
-      font-weight: 700;
-      color: #333;
-    }
-
-    .bonus-grid {
-      grid-template-columns: 1fr;
-      gap: 24px;
-    }
-
-    /* Always 1 col on mobile */
-    .bonus-card {
-      padding: 32px 20px;
-      border: 3px solid #FFD0E8;
-      box-shadow: 0 8px 24px rgba(232, 22, 122, 0.15);
-      border-radius: 18px;
-    }
-
-    .b-num {
-      font-size: 15px;
-      margin-bottom: 8px;
-    }
-
-    .b-title {
-      font-size: 22px;
-      margin-bottom: 12px;
-    }
-
-    .bonus-card p {
-      font-size: 17px;
-    }
-
-    .section-plans h2 {
-      font-size: clamp(26px, 7vw, 36px);
-    }
-
-    .plans-sub {
-      font-size: 16px;
-    }
-
-    .plan-top-badge {
-      font-size: 14px;
-      padding: 8px 26px;
-      top: -18px;
-    }
-
-    .plan-title {
-      font-size: 22px;
-    }
-
-    .plan-card.complete .plan-title {
-      font-size: 18px;
-    }
-
-    .plan-list li {
-      font-size: 16px;
-      padding: 6px 0;
-    }
-
-    .plan-old {
-      font-size: 16px;
-    }
-
-    .plan-price {
-      font-size: 48px;
-    }
-
-    .plan-note {
-      font-size: 15px;
-    }
-
-    .plan-savings {
-      font-size: 15px;
-      font-weight: 900;
-      padding: 8px 20px;
-    }
-
-    .btn-plan {
-      font-size: 17px;
-      padding: 20px;
-      border-radius: 12px;
-      width: 100%;
-    }
-
-    .plan-upsell {
-      font-size: 15px;
-    }
-
-    .plan-promo {
-      font-size: 14px;
-      margin-top: 14px;
-    }
-
-    .popup-warn {
-      font-size: 54px;
-    }
-
-    .popup-title {
-      font-size: 26px;
-    }
-
-    .popup-body {
-      font-size: 16px;
-    }
-
-    .popup-body strong {
-      font-size: 24px;
-    }
-
-    .btn-popup-yes {
-      font-size: 18px;
-      padding: 20px;
-    }
-
-    .btn-popup-no {
-      font-size: 15px;
-    }
-
-    .guarantee-wrap h3 {
-      font-size: 20px;
-    }
-
-    .guarantee-wrap p {
-      font-size: 17px;
-    }
-
-    .section-testi h2 {
-      font-size: clamp(26px, 7vw, 36px);
-    }
-
-    .testi-sub {
-      font-size: 16px;
-    }
-
-    .testi-text {
-      font-size: 17px;
-    }
-
-    .testi-name {
-      font-size: 16px;
-    }
-
-    .testi-loc {
-      font-size: 14px;
-    }
-
-    .testi-verified {
-      font-size: 13px;
-    }
-
-    .snum {
-      font-size: 32px;
-    }
-
-    .slabel {
-      font-size: 14px;
-    }
-
-    .section-faq h2 {
-      font-size: clamp(26px, 7vw, 36px);
-    }
-
-    .faq-q {
-      font-size: 18px;
-      padding: 20px;
-    }
-
-    .faq-a {
-      font-size: 16px;
-    }
-
-    .faq-a-inner {
-      padding: 0 20px 20px;
-    }
-
-    footer {
-      font-size: 15px;
-    }
-
-    .f-crime {
-      font-size: 16px;
-    }
-
-    .f-badge {
-      font-size: 13px;
-      padding: 10px 18px;
-    }
-
-    /* DEIXANDO AS LETRAS PEQUENAS E TEXTOS MAIS FORTES / MENOS APAGADOS */
-    .hero-subtitle,
-    .hero-sub,
-    .delivery-small,
-    .benefit-card p,
-    .section-receive .sub-txt,
-    .checklist-box li,
-    .checklist-more,
-    .bonus-card p,
-    .plans-sub,
-    .plan-list li,
-    .plan-note,
-    .plan-upsell,
-    .guarantee-wrap p,
-    .testi-sub,
-    .testi-text,
-    .testi-loc,
-    .faq-a,
-    .carousel-caption {
+    /* MOBILE OVERRIDES */
+    body { font-size: 16px; }
+    .top-bar { font-size: 16px; padding: 12px 16px; }
+    .delivery-badge { font-size: 15px; padding: 10px; }
+    .hero h1 { font-size: clamp(26px, 8vw, 40px); }
+    .hero-subtitle { font-size: 17px; }
+    .badge-bonus { font-size: 15px; padding: 8px 24px; }
+    .hero-sub { font-size: 17px; }
+    .btn-main { font-size: 20px; padding: 20px 42px; width: 100%; border-radius: 12px; }
+    .delivery-small { font-size: 14px; }
+    .carousel-title { font-size: clamp(22px, 6vw, 30px); }
+    .carousel-caption { font-size: 16px; }
+    .cta-strip h2 { font-size: clamp(22px, 6vw, 32px); line-height: 1.4; }
+    .btn-white { font-size: 18px; padding: 18px 40px; width: 100%; border-radius: 12px; }
+    .section-ideal h2 { font-size: clamp(26px, 7vw, 36px); }
+    .benefit-card h3 { font-size: 18px; }
+    .benefit-card p { font-size: 16px; }
+    .section-receive h2 { font-size: clamp(24px, 6vw, 32px); }
+    .section-receive .sub-txt { font-size: 17px; }
+    .checklist-box h3 { font-size: 18px; margin-bottom: 18px; }
+    .checklist-box li { font-size: 16px; padding: 8px 0; }
+    .checklist-more { font-size: 16px; }
+    .bonus-eyebrow { font-size: 16px; }
+    .section-bonus h2 { font-size: clamp(28px, 8vw, 40px); color: var(--pink); margin-bottom: 12px; }
+    .bonus-sub2 { font-size: 18px; font-weight: 700; color: #333; }
+    .bonus-grid { grid-template-columns: 1fr; gap: 24px; }
+    .bonus-card { padding: 32px 20px; border: 3px solid #FFD0E8; box-shadow: 0 8px 24px rgba(232, 22, 122, 0.15); border-radius: 18px; }
+    .b-num { font-size: 15px; margin-bottom: 8px; }
+    .b-title { font-size: 22px; margin-bottom: 12px; }
+    .bonus-card p { font-size: 17px; }
+    .section-plans h2 { font-size: clamp(26px, 7vw, 36px); }
+    .plans-sub { font-size: 16px; }
+    .plan-top-badge { font-size: 14px; padding: 8px 26px; top: -18px; }
+    .plan-title { font-size: 22px; }
+    .plan-card.complete .plan-title { font-size: 18px; }
+    .plan-list li { font-size: 16px; padding: 6px 0; }
+    .plan-old { font-size: 16px; }
+    .plan-price { font-size: 48px; }
+    .plan-note { font-size: 15px; }
+    .plan-savings { font-size: 15px; font-weight: 900; padding: 8px 20px; }
+    .btn-plan { font-size: 17px; padding: 20px; border-radius: 12px; width: 100%; }
+    .plan-upsell { font-size: 15px; }
+    .plan-promo { font-size: 14px; margin-top: 14px; }
+    .popup-warn { font-size: 54px; }
+    .popup-title { font-size: 26px; }
+    .popup-body { font-size: 16px; }
+    .popup-body strong { font-size: 24px; }
+    .btn-popup-yes { font-size: 18px; padding: 20px; }
+    .btn-popup-no { font-size: 15px; }
+    .guarantee-wrap h3 { font-size: 20px; }
+    .guarantee-wrap p { font-size: 17px; }
+    .section-testi h2 { font-size: clamp(26px, 7vw, 36px); }
+    .testi-sub { font-size: 16px; }
+    .testi-text { font-size: 17px; }
+    .testi-name { font-size: 16px; }
+    .testi-loc { font-size: 14px; }
+    .testi-verified { font-size: 13px; }
+    .snum { font-size: 32px; }
+    .slabel { font-size: 14px; }
+    .section-faq h2 { font-size: clamp(26px, 7vw, 36px); }
+    .faq-q { font-size: 18px; padding: 20px; }
+    .faq-a { font-size: 16px; }
+    .faq-a-inner { padding: 0 20px 20px; }
+    footer { font-size: 15px; }
+    .f-crime { font-size: 16px; }
+    .f-badge { font-size: 13px; padding: 10px 18px; }
+
+    /* TEXTOS MAIS FORTES */
+    .hero-subtitle, .hero-sub, .delivery-small, .benefit-card p,
+    .section-receive .sub-txt, .checklist-box li, .checklist-more,
+    .bonus-card p, .plans-sub, .plan-list li, .plan-note, .plan-upsell,
+    .guarantee-wrap p, .testi-sub, .testi-text, .testi-loc,
+    .faq-a, .carousel-caption {
       color: #222 !important;
       font-weight: 600 !important;
     }
 
-    /* Rodapé é fundo preto, então precisa clarear o texto para destacar e não escurecer */
-    footer p,
-    footer {
-      color: #eee !important;
+    footer p, footer { color: #eee !important; font-weight: 600 !important; }
+
+    /* Exceção: textos dentro do plano completo (fundo escuro) */
+    .section-plans-complete .plan-list li,
+    .section-plans-complete .plan-note,
+    .section-plans-complete .plan-promo,
+    .section-plans-complete .plans-sub-dark {
+      color: rgba(255,255,255,0.85) !important;
       font-weight: 600 !important;
     }
   </style>
@@ -1481,11 +1300,10 @@
       crianças das <u>telas sem brigas</u></h1>
     <p class="hero-subtitle">Kit Casinhas de Boneca realista em papel com bonecas, guarda-roupa e acessórios</p>
     <div class="badge-bonus">+6 BÔNUS INCLUSOS</div>
-    <img class="hero-img" src="imagens/hero/c1e0bdfd63bb58dc61a07ef1fb4bd30e.webp" alt="Kit Casinhas de Boneca">
+    <img class="hero-img" src="imagens/hero/c1e0bdfd63bb58dc61a07ef1fb4bd30e.webp" alt="Kit Casinhas de Boneca realista em papel com bonecas e acessórios">
     <p class="hero-sub">
       Receba o molde de <u>5 casinhas de boneca em papel</u> + <u>bonecas interativas</u> prontas para imprimir e
-      montar.
-      Uma atividade criativa, barata e educativa por apenas <u>R$10,00</u>.
+      montar. Uma atividade criativa, barata e educativa por apenas <u>R$10,00</u>.
     </p>
     <a href="#planos" class="btn-main">QUERO RECEBER AGORA</a>
     <p class="delivery-small">✅ Entrega imediata</p>
@@ -1498,16 +1316,16 @@
       <button class="car-btn" onclick="carMove(-1)">&#8249;</button>
       <div class="car-track-wrap">
         <div class="car-track" id="carTrack">
-          <div class="car-slide"><img src="imagens/carrosel/img1.webp" alt="Vídeoaula montagem"></div>
-          <div class="car-slide"><img src="imagens/carrosel/img2.webp" alt="Muito fácil de montar"></div>
-          <div class="car-slide"><img src="imagens/carrosel/img3.webp" alt="Criança montando kit"></div>
-          <div class="car-slide"><img src="imagens/carrosel/img4.webp" alt="Kit Arrume-se comigo"></div>
-          <div class="car-slide"><img src="imagens/carrosel/img5.webp" alt="Quartos e acessórios"></div>
-          <div class="car-slide"><img src="imagens/carrosel/img6.webp" alt="Kit completo com bônus"></div>
-          <div class="car-slide"><img src="imagens/carrosel/img7.webp" alt="Kit Casinha Trailer"></div>
-          <div class="car-slide"><img src="imagens/carrosel/img8.webp" alt="No papel e montado"></div>
-          <div class="car-slide"><img src="imagens/carrosel/img9.webp" alt="Criança brincando"></div>
-          <div class="car-slide"><img src="imagens/carrosel/img10.webp" alt="Boneca de papel pink"></div>
+          <div class="car-slide"><img src="imagens/carrosel/img1.webp" alt="Vídeoaula com passo a passo de montagem das casinhas" loading="lazy"></div>
+          <div class="car-slide"><img src="imagens/carrosel/img2.webp" alt="Casinha de boneca muito fácil de montar" loading="lazy"></div>
+          <div class="car-slide"><img src="imagens/carrosel/img3.webp" alt="Criança montando o kit de casinhas de boneca" loading="lazy"></div>
+          <div class="car-slide"><img src="imagens/carrosel/img4.webp" alt="Kit Arrume-se comigo com boneca e acessórios" loading="lazy"></div>
+          <div class="car-slide"><img src="imagens/carrosel/img5.webp" alt="Quartos e acessórios das casinhas de boneca" loading="lazy"></div>
+          <div class="car-slide"><img src="imagens/carrosel/img6.webp" alt="Kit completo com todos os bônus inclusos" loading="lazy"></div>
+          <div class="car-slide"><img src="imagens/carrosel/img7.webp" alt="Kit Casinha Trailer realista em papel" loading="lazy"></div>
+          <div class="car-slide"><img src="imagens/carrosel/img8.webp" alt="Casinha de boneca no papel e depois de montada" loading="lazy"></div>
+          <div class="car-slide"><img src="imagens/carrosel/img9.webp" alt="Criança brincando com a casinha de boneca montada" loading="lazy"></div>
+          <div class="car-slide"><img src="imagens/carrosel/img10.webp" alt="Boneca de papel com tema pink e acessórios" loading="lazy"></div>
         </div>
       </div>
       <button class="car-btn" onclick="carMove(1)">&#8250;</button>
@@ -1560,7 +1378,7 @@
     <h2>TUDO O QUE VOCÊ VAI RECEBER:</h2>
     <p class="sub-txt">Receba o molde de <span>5 casinhas de boneca</span> em papel + <span>bonecas interativas</span>
       prontas para imprimir e montar.</p>
-    <img class="product-img" src="imagens/tudooquevaireceber/01.webp" alt="Kit completo">
+    <img class="product-img" src="imagens/tudooquevaireceber/01.webp" alt="Kit completo das casinhas de boneca em papel com todos os arquivos inclusos" loading="lazy">
     <div class="checklist-box">
       <h3>Kit de 5 Casinhas de Boneca realista em Papel</h3>
       <ul>
@@ -1585,43 +1403,43 @@
     <p class="bonus-sub2">Você também vai receber:</p>
     <div class="bonus-grid">
       <div class="bonus-card">
-        <img class="b-icon" src="imagens/bonus/bonus1.webp" alt="Bônus 1"
-          style="max-height: 160px; width: 100%; object-fit: contain; padding-bottom: 16px;">
+        <img class="b-icon" src="imagens/bonus/bonus1.webp" alt="Bônus 1 — Kit Boneca Sereia para montar e brincar"
+          style="max-height: 160px; width: 100%; object-fit: contain; padding-bottom: 16px;" loading="lazy">
         <div class="b-num">#BÔNUS 01 HOJE</div>
         <div class="b-title">Kit Boneca Sereia</div>
         <p>Monte uma boneca com a temática Sereia para criar novos cenários.</p>
       </div>
       <div class="bonus-card">
-        <img class="b-icon" src="imagens/bonus/bonus2.webp" alt="Bônus 2"
-          style="max-height: 160px; width: 100%; object-fit: contain; padding-bottom: 16px;">
+        <img class="b-icon" src="imagens/bonus/bonus2.webp" alt="Bônus 2 — Kit Boneca Professora para estimular novas brincadeiras"
+          style="max-height: 160px; width: 100%; object-fit: contain; padding-bottom: 16px;" loading="lazy">
         <div class="b-num">#BÔNUS 02 HOJE</div>
         <div class="b-title">Kit Boneca Professora</div>
         <p>Monte uma nova boneca para estimular novas brincadeiras com as casinhas.</p>
       </div>
       <div class="bonus-card">
-        <img class="b-icon" src="imagens/bonus/bonus3.webp" alt="Bônus 3"
-          style="max-height: 160px; width: 100%; object-fit: contain; padding-bottom: 16px;">
+        <img class="b-icon" src="imagens/bonus/bonus3.webp" alt="Bônus 3 — Kit Maquiagem e Guarda-Roupa para personalizar as bonecas"
+          style="max-height: 160px; width: 100%; object-fit: contain; padding-bottom: 16px;" loading="lazy">
         <div class="b-num">#BÔNUS 03 HOJE</div>
         <div class="b-title">Kit Maquiagem e Guarda-Roupa</div>
         <p>Mais acessórios para personalizar as suas bonecas e aumentar o tempo de diversão.</p>
       </div>
       <div class="bonus-card">
-        <img class="b-icon" src="imagens/bonus/bonus4.webp" alt="Bônus 4"
-          style="max-height: 160px; width: 100%; object-fit: contain; padding-bottom: 16px;">
+        <img class="b-icon" src="imagens/bonus/bonus4.webp" alt="Bônus 4 — Vídeo aula completa com passo a passo para montar"
+          style="max-height: 160px; width: 100%; object-fit: contain; padding-bottom: 16px;" loading="lazy">
         <div class="b-num">#BÔNUS 04 HOJE</div>
         <div class="b-title">Vídeo Aula Completa</div>
         <p>Coloque sua filha para acompanhar um vídeo com o passo a passo simples para montar todas as casinhas.</p>
       </div>
       <div class="bonus-card">
-        <img class="b-icon" src="imagens/bonus/bonus5.webp" alt="Bônus 5"
-          style="max-height: 160px; width: 100%; object-fit: contain; padding-bottom: 16px;">
+        <img class="b-icon" src="imagens/bonus/bonus5.webp" alt="Bônus 5 — Suporte 24h via WhatsApp para tirar dúvidas"
+          style="max-height: 160px; width: 100%; object-fit: contain; padding-bottom: 16px;" loading="lazy">
         <div class="b-num">#BÔNUS 05 HOJE</div>
         <div class="b-title">Suporte 24h via WhatsApp</div>
         <p>Se precisar de ajuda ou tirar alguma dúvida, não importa a hora, nos envie mensagem.</p>
       </div>
       <div class="bonus-card">
-        <img class="b-icon" src="imagens/bonus/garantia.webp" alt="Bônus 6"
-          style="max-height: 160px; width: 100%; object-fit: contain; padding-bottom: 16px;">
+        <img class="b-icon" src="imagens/bonus/garantia.webp" alt="Bônus 6 — Garantia estendida de 30 dias sem risco"
+          style="max-height: 160px; width: 100%; object-fit: contain; padding-bottom: 16px;" loading="lazy">
         <div class="b-num">#BÔNUS 06 HOJE</div>
         <div class="b-title">Garantia Estendida</div>
         <p>Por lei devemos entregar 7 dias de garantia. Mas disponibilizamos 30 dias para testar sem risco.</p>
@@ -1630,29 +1448,50 @@
   </section>
 
   <!-- 8. PLANOS -->
-  <section class="section-plans" id="planos">
+
+  <!-- PLANO BÁSICO — fundo branco normal -->
+  <section class="section-plans" id="planos" style="background:#fff; padding-bottom: 0;">
     <h2>ESCOLHA SEU PLANO ⬇️</h2>
     <p class="plans-sub">Acesso imediato após a confirmação do pagamento</p>
-    <div class="plans-grid">
 
-      <!-- BÁSICO -->
+    <div style="max-width:420px; margin: 0 auto;">
       <div class="plan-card basic">
         <div class="plan-title">PLANO BÁSICO</div>
-        <img class="plan-img" src="imagens/planos/basico10.webp" alt="Plano Básico">
+        <img class="plan-img" src="imagens/planos/basico10.webp" alt="Plano Básico — Kit 5 Casinhas de Boneca em PDF" loading="lazy">
         <ul class="plan-list">
           <li>Kit 5 Casinhas de Boneca em Papel em PDF para imprimir</li>
         </ul>
-        <div class="plan-price">R$10,00</div>
+        <div class="plan-price" style="color: var(--green);">R$10,00</div>
         <div class="plan-note">ou 3x de R$3,33</div>
         <button class="btn-plan" onclick="openPopup()">QUERO SOMENTE O BÁSICO</button>
-        <p class="plan-upsell">Temos uma oferta ainda mais vantajosa para você. Veja logo abaixo ⬇️</p>
+        <p class="plan-upsell" style="color:#555 !important;">Mas espera! Temos uma oferta muito mais vantajosa logo abaixo 👇</p>
       </div>
+    </div>
 
-      <!-- COMPLETO -->
+    <!-- Seta animada indicando que tem mais conteúdo -->
+    <div class="scroll-hint">
+      <span>Veja a oferta completa</span>
+      <div class="scroll-hint-arrow">↓</div>
+    </div>
+  </section>
+
+  <!-- FAIXA DIVISORA DE TRANSIÇÃO -->
+  <div class="plans-divider">
+    <div class="plans-divider-inner">
+      <span>⭐ MAIS VENDIDO — OFERTA COMPLETA</span>
+    </div>
+  </div>
+
+  <!-- PLANO COMPLETO — fundo roxo escuro -->
+  <section class="section-plans-complete">
+    <div class="plans-title-dark">PLANO COMPLETO<br>COM TODOS OS BÔNUS</div>
+    <p class="plans-sub-dark">Acesso imediato após a confirmação do pagamento</p>
+
+    <div style="max-width:420px; margin: 0 auto;">
       <div class="plan-card complete">
         <div class="plan-top-badge">⭐ MAIS VENDIDO</div>
         <div class="plan-title">PLANO COMPLETO COM TODOS OS BÔNUS</div>
-        <img class="plan-img" src="imagens/planos/27,90.webp" alt="Plano Completo">
+        <img class="plan-img" src="imagens/planos/27,90.webp" alt="Plano Completo com todos os bônus inclusos" loading="lazy">
         <ul class="plan-list">
           <li>Kit 5 Casinhas exclusivas ultra realistas</li>
           <li>Acessórios das casinhas</li>
@@ -1664,13 +1503,12 @@
           <li>Garantia estendida de 30 dias</li>
         </ul>
         <div class="plan-old">De R$97,90</div>
-        <div style="font-size:13px;color:#888;margin-bottom:4px;">Por apenas:</div>
+        <div class="plan-por-apenas">Por apenas:</div>
         <div class="plan-price">R$27,90</div>
         <div class="plan-savings">Você economiza R$70,00</div>
         <button class="btn-plan" onclick="window.location.href='https://www.ggcheckout.com/checkout/v2/Qi1q7emmYVwh7qhRvIPs'">QUERO O PLANO COMPLETO</button>
         <p class="plan-promo">🔥 Oferta promocional por tempo limitado.</p>
       </div>
-
     </div>
   </section>
 
@@ -1693,8 +1531,8 @@
   <!-- 9. GARANTIA -->
   <section class="section-guarantee">
     <div class="guarantee-wrap">
-      <img src="imagens/garantiasessao/garantia-sessao.png" alt="Garantia" class="guarantee-icon"
-        style="max-width: 100px;">
+      <img src="imagens/garantiasessao/garantia-sessao.png" alt="Selo de garantia incondicional de 30 dias" class="guarantee-icon"
+        style="max-width: 100px;" loading="lazy">
       <div>
         <h3>RISCO ZERO: GARANTIA INCONDICIONAL DE 30 DIAS!</h3>
         <p>Se em até 30 dias você não amar o material, devolvemos 100% do seu dinheiro. Sem perguntas. O seu risco por
@@ -1715,7 +1553,7 @@
           seguinte pediu para fazer de novo. Nunca vi ela tão concentrada e feliz. Vale muito a pena já indiquei para
           todas as amigas!"</p>
         <div class="testi-footer">
-          <img class="testi-avatar" src="imagens/depoimentos/dep1.png" alt="Mariana Silva" style="object-fit: cover;">
+          <img class="testi-avatar" src="imagens/depoimentos/dep1.png" alt="Foto de Mariana Silva" style="object-fit: cover;" loading="lazy">
           <div>
             <div class="testi-name">Mariana Silva</div>
             <div class="testi-loc">📍 Campinas – SP</div>
@@ -1729,8 +1567,8 @@
         <p class="testi-text">"Cores lindas e muito fácil de montar! Minha filha de 7 anos montou quase sozinha
           assistindo ao vídeo. Os bônus da Sereia são o máximo ela cria histórias diferentes todos os dias!"</p>
         <div class="testi-footer">
-          <img class="testi-avatar" src="imagens/depoimentos/dep2.png" alt="Fernanda Oliveira"
-            style="object-fit: cover;">
+          <img class="testi-avatar" src="imagens/depoimentos/dep2.png" alt="Foto de Fernanda Oliveira"
+            style="object-fit: cover;" loading="lazy">
           <div>
             <div class="testi-name">Fernanda Oliveira</div>
             <div class="testi-loc">📍 Curitiba – PR</div>
@@ -1744,8 +1582,8 @@
         <p class="testi-text">"Atividade perfeita! Imprimi no papel 180g como indicado e ficou incrível. O suporte no
           WhatsApp me ajudou rapidinho com uma dúvida sobre a impressão. Superou todas as minhas expectativas!"</p>
         <div class="testi-footer">
-          <img class="testi-avatar" src="imagens/depoimentos/dep3.jpg" alt="Beatriz Cavalcante"
-            style="object-fit: cover;">
+          <img class="testi-avatar" src="imagens/depoimentos/dep3.jpg" alt="Foto de Beatriz Cavalcante"
+            style="object-fit: cover;" loading="lazy">
           <div>
             <div class="testi-name">Beatriz Cavalcante</div>
             <div class="testi-loc">📍 Fortaleza – CE</div>
@@ -1853,6 +1691,17 @@
     function carMove(dir) { carGoTo(carIdx + dir); }
     setInterval(function () { carMove(1); }, 3500);
 
+    /* SWIPE TOUCH no carrossel */
+    (function() {
+      const wrap = document.querySelector('.car-track-wrap');
+      let startX = 0;
+      wrap.addEventListener('touchstart', function(e) { startX = e.touches[0].clientX; }, { passive: true });
+      wrap.addEventListener('touchend', function(e) {
+        const diff = startX - e.changedTouches[0].clientX;
+        if (Math.abs(diff) > 40) carMove(diff > 0 ? 1 : -1);
+      }, { passive: true });
+    })();
+
     /* FAQ */
     function toggleFaq(btn) {
       btn.classList.toggle('open');
@@ -1867,7 +1716,4 @@
     });
   </script>
 </body>
-
 </html>
-EOF
-echo "done"
