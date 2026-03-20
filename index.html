@@ -1286,6 +1286,22 @@
       font-weight: 600 !important;
     }
   </style>
+<script>
+!function(f,b,e,v,n,t,s)
+{if(f.fbq)return;n=f.fbq=function(){n.callMethod?
+n.callMethod.apply(n,arguments):n.queue.push(arguments)};
+if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';
+n.queue=[];t=b.createElement(e);t.async=!0;
+t.src=v;s=b.getElementsByTagName(e)[0];
+s.parentNode.insertBefore(t,s)}(window, document,'script',
+'https://connect.facebook.net/en_US/fbevents.js');
+fbq('init', '949064384245306');
+fbq('track', 'PageView');
+fbq('track', 'ViewContent'); // Isso ajuda a otimizar para tráfego direto
+</script>
+<noscript><img height="1" width="1" style="display:none"
+src="https://www.facebook.com/tr?id=949064384245306&ev=PageView&noscript=1"
+/></noscript>
 </head>
 
 <body>
@@ -1506,7 +1522,7 @@
         <div class="plan-por-apenas">Por apenas:</div>
         <div class="plan-price">R$27,90</div>
         <div class="plan-savings">Você economiza R$70,00</div>
-        <button class="btn-plan" onclick="window.location.href='https://www.ggcheckout.com/checkout/v2/Qi1q7emmYVwh7qhRvIPs'">QUERO O PLANO COMPLETO</button>
+        <button class="btn-plan" onclick="fbq('track', 'InitiateCheckout'); window.location.href='https://www.ggcheckout.com/checkout/v2/Qi1q7emmYVwh7qhRvIPs'">QUERO O PLANO COMPLETO</button>
         <p class="plan-promo">🔥 Oferta promocional por tempo limitado.</p>
       </div>
     </div>
@@ -1523,8 +1539,8 @@
         (com todos os bônus e aulas) de <s>R$27,90</s> por apenas
         <strong>R$19,90</strong>!
       </p>
-      <button class="btn-popup-yes" onclick="window.location.href='https://www.ggcheckout.com/checkout/v2/Ya1of9EjFMstPBPXB5n8'">SIM! QUERO TUDO POR R$19,90</button>
-      <button class="btn-popup-no" onclick="window.location.href='https://www.ggcheckout.com/checkout/v2/yytwonZqJmKOjCeUpY8f'">Não, prefiro levar só o básico por R$10</button>
+      <button class="btn-popup-yes" onclick="fbq('track', 'InitiateCheckout'); window.location.href='https://www.ggcheckout.com/checkout/v2/Ya1of9EjFMstPBPXB5n8'">SIM! QUERO TUDO POR R$19,90</button>
+      <button class="btn-popup-no" onclick="fbq('track', 'InitiateCheckout'); window.location.href='https://www.ggcheckout.com/checkout/v2/yytwonZqJmKOjCeUpY8f'">Não, prefiro levar só o básico por R$10</button>
     </div>
   </div>
 
