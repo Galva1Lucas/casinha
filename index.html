@@ -2,6 +2,25 @@
 <html lang="pt-BR">
 
 <head>
+  <!-- ✅ 1. PIXEL DO FACEBOOK (sempre primeiro) -->
+  <script>
+    !function(f,b,e,v,n,t,s)
+    {if(f.fbq)return;n=f.fbq=function(){n.callMethod?
+    n.callMethod.apply(n,arguments):n.queue.push(arguments)};
+    if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';
+    n.queue=[];t=b.createElement(e);t.async=!0;
+    t.src=v;s=b.getElementsByTagName(e)[0];
+    s.parentNode.insertBefore(t,s)}(window, document,'script',
+    'https://connect.facebook.net/en_US/fbevents.js');
+    fbq('init', '949064384245306');
+    fbq('track', 'PageView');
+  </script>
+  <noscript>
+    <img height="1" width="1" style="display:none"
+      src="https://www.facebook.com/tr?id=949064384245306&ev=PageView&noscript=1"/>
+  </noscript>
+
+  <!-- ✅ 2. UTMIFY PIXEL (uma única vez) -->
   <script>
     window.pixelId = "69bd7b22aa3860bd8066c65b";
     var a = document.createElement("script");
@@ -11,7 +30,15 @@
     document.head.appendChild(a);
   </script>
 
-  <script src="https://cdn.utmify.com.br/scripts/utms/latest.js" data-utmify-prevent-xcod-sck data-utmify-prevent-subids async defer></script>
+  <!-- ✅ 3. UTMIFY UTMs (sem duplicata — apenas UMA vez) -->
+  <script
+    src="https://cdn.utmify.com.br/scripts/utms/latest.js"
+    data-utmify-prevent-xcod-sck
+    data-utmify-prevent-subids
+    async
+    defer
+  ></script>
+
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Kit Casinhas de Boneca – Biblioteca Digital</title>
@@ -22,6 +49,8 @@
   <meta property="og:title" content="Kit Casinhas de Boneca – Biblioteca Digital">
   <meta property="og:description" content="5 casinhas de boneca em papel + bonecas interativas prontas para imprimir e montar. Por apenas R$10,00. Entrega imediata!">
   <meta property="og:image" content="imagens/hero/c1e0bdfd63bb58dc61a07ef1fb4bd30e.webp">
+  <!-- ✅ og:url adicionado -->
+  <meta property="og:url" content="https://bibliotecadigital.com.br/">
   <meta property="og:locale" content="pt_BR">
   <meta name="twitter:card" content="summary_large_image">
   <meta name="twitter:title" content="Kit Casinhas de Boneca – Biblioteca Digital">
@@ -522,22 +551,18 @@
       line-height: 1.45;
     }
 
-    /* ======================================
-       PLANOS — layout mobile em coluna única
-       ====================================== */
+    /* PLANOS */
     .section-plans {
       padding: 52px 20px;
       text-align: center;
     }
 
-    /* Plano básico: fundo branco normal */
     .section-plans-basic {
       background: #fff;
       padding: 52px 20px 0;
       text-align: center;
     }
 
-    /* Plano completo: fundo roxo escuro premium */
     .section-plans-complete {
       background: var(--dark-bg);
       padding: 52px 20px 60px;
@@ -546,7 +571,6 @@
       overflow: hidden;
     }
 
-    /* Detalhe decorativo de brilho no canto */
     .section-plans-complete::before {
       content: '';
       position: absolute;
@@ -587,7 +611,6 @@
       margin-bottom: 32px;
     }
 
-    /* Indicador "tem mais abaixo" */
     .scroll-hint {
       display: flex;
       flex-direction: column;
@@ -616,7 +639,6 @@
       50% { transform: translateY(6px); }
     }
 
-    /* Faixa divisora entre básico e completo */
     .plans-divider {
       background: var(--dark-bg);
       padding: 18px 20px;
@@ -800,7 +822,6 @@
       font-weight: 700;
     }
 
-    /* Label de preço "por apenas" no plano completo */
     .plan-por-apenas {
       font-size: 13px;
       color: rgba(255,255,255,0.6);
@@ -1264,7 +1285,6 @@
     .f-crime { font-size: 16px; }
     .f-badge { font-size: 13px; padding: 10px 18px; }
 
-    /* TEXTOS MAIS FORTES */
     .hero-subtitle, .hero-sub, .delivery-small, .benefit-card p,
     .section-receive .sub-txt, .checklist-box li, .checklist-more,
     .bonus-card p, .plans-sub, .plan-list li, .plan-note, .plan-upsell,
@@ -1276,7 +1296,6 @@
 
     footer p, footer { color: #eee !important; font-weight: 600 !important; }
 
-    /* Exceção: textos dentro do plano completo (fundo escuro) */
     .section-plans-complete .plan-list li,
     .section-plans-complete .plan-note,
     .section-plans-complete .plan-promo,
@@ -1304,6 +1323,7 @@
       Receba o molde de <u>5 casinhas de boneca em papel</u> + <u>bonecas interativas</u> prontas para imprimir e
       montar. Uma atividade criativa, barata e educativa por apenas <u>R$10,00</u>.
     </p>
+    <!-- ✅ Botão hero: apenas navega para #planos, sem fbq -->
     <a href="#planos" class="btn-main">QUERO RECEBER AGORA</a>
     <p class="delivery-small">✅ Entrega imediata</p>
   </section>
@@ -1313,7 +1333,7 @@
     <h2 class="carousel-title">ESSE É O EXATO MATERIAL QUE VOCÊ VAI RECEBER</h2>
     <div class="carousel-wrapper">
       <button class="car-btn" onclick="carMove(-1)">&#8249;</button>
-      <div class="car-track-wrap">
+      <div class="car-track-wrap" id="carTrackWrap">
         <div class="car-track" id="carTrack">
           <div class="car-slide"><img src="imagens/carrosel/img1.webp" alt="Vídeoaula com passo a passo de montagem das casinhas" loading="lazy"></div>
           <div class="car-slide"><img src="imagens/carrosel/img2.webp" alt="Casinha de boneca muito fácil de montar" loading="lazy"></div>
@@ -1338,6 +1358,7 @@
   <!-- 4. CTA STRIP -->
   <section class="cta-strip">
     <h2>Ainda hoje você pode reduzir o tempo de tela da sua filha usando apenas papel, tesoura e imaginação.</h2>
+    <!-- ✅ Botão CTA strip: apenas navega para #planos, sem fbq -->
     <a href="#planos" class="btn-main">QUERO RECEBER AGORA</a>
   </section>
 
@@ -1448,7 +1469,7 @@
 
   <!-- 8. PLANOS -->
 
-  <!-- PLANO BÁSICO — fundo branco normal -->
+  <!-- PLANO BÁSICO -->
   <section class="section-plans" id="planos" style="background:#fff; padding-bottom: 0;">
     <h2>ESCOLHA SEU PLANO ⬇️</h2>
     <p class="plans-sub">Acesso imediato após a confirmação do pagamento</p>
@@ -1462,26 +1483,26 @@
         </ul>
         <div class="plan-price" style="color: var(--green);">R$10,00</div>
         <div class="plan-note">ou 3x de R$3,33</div>
+        <!-- ✅ Abre popup — sem fbq aqui -->
         <button class="btn-plan" onclick="openPopup()">QUERO SOMENTE O BÁSICO</button>
         <p class="plan-upsell" style="color:#555 !important;">Mas espera! Temos uma oferta muito mais vantajosa logo abaixo 👇</p>
       </div>
     </div>
 
-    <!-- Seta animada indicando que tem mais conteúdo -->
     <div class="scroll-hint">
       <span>Veja a oferta completa</span>
       <div class="scroll-hint-arrow">↓</div>
     </div>
   </section>
 
-  <!-- FAIXA DIVISORA DE TRANSIÇÃO -->
+  <!-- FAIXA DIVISORA -->
   <div class="plans-divider">
     <div class="plans-divider-inner">
       <span>⭐ MAIS VENDIDO — OFERTA COMPLETA</span>
     </div>
   </div>
 
-  <!-- PLANO COMPLETO — fundo roxo escuro -->
+  <!-- PLANO COMPLETO -->
   <section class="section-plans-complete">
     <div class="plans-title-dark">PLANO COMPLETO<br>COM TODOS OS BÔNUS</div>
     <p class="plans-sub-dark">Acesso imediato após a confirmação do pagamento</p>
@@ -1505,6 +1526,7 @@
         <div class="plan-por-apenas">Por apenas:</div>
         <div class="plan-price">R$27,90</div>
         <div class="plan-savings">Você economiza R$70,00</div>
+        <!-- ✅ InitiateCheckout dispara APENAS aqui — indo pro checkout de R$27,90 -->
         <button class="btn-plan" onclick="fbq('track', 'InitiateCheckout'); window.location.href='https://www.ggcheckout.com/checkout/v2/Qi1q7emmYVwh7qhRvIPs'">QUERO O PLANO COMPLETO</button>
         <p class="plan-promo">🔥 Oferta promocional por tempo limitado.</p>
       </div>
@@ -1514,6 +1536,7 @@
   <!-- POP-UP DOWNSELL -->
   <div class="popup-overlay" id="popupOverlay">
     <div class="popup-box">
+      <!-- ✅ Fechar popup: sem fbq, só fecha -->
       <button class="popup-close" onclick="closePopup()">✕</button>
       <div class="popup-warn">⚠️</div>
       <div class="popup-title">ESPERA!<br>NÃO LEVE SÓ METADE...</div>
@@ -1522,7 +1545,9 @@
         (com todos os bônus e aulas) de <s>R$27,90</s> por apenas
         <strong>R$19,90</strong>!
       </p>
+      <!-- ✅ InitiateCheckout dispara ao ir pro checkout de R$19,90 -->
       <button class="btn-popup-yes" onclick="fbq('track', 'InitiateCheckout'); window.location.href='https://www.ggcheckout.com/checkout/v2/Ya1of9EjFMstPBPXB5n8'">SIM! QUERO TUDO POR R$19,90</button>
+      <!-- ✅ InitiateCheckout dispara ao ir pro checkout de R$10 -->
       <button class="btn-popup-no" onclick="fbq('track', 'InitiateCheckout'); window.location.href='https://www.ggcheckout.com/checkout/v2/yytwonZqJmKOjCeUpY8f'">Não, prefiro levar só o básico por R$10</button>
     </div>
   </div>
@@ -1669,28 +1694,46 @@
   </footer>
 
   <script>
-    /* CARROSSEL */
+    /* ✅ CARROSSEL com pausa no hover */
     let carIdx = 0;
     const carTotal = 10;
     const carTrackEl = document.getElementById('carTrack');
     const carDotsEl = document.getElementById('carDots');
     const carCounterEl = document.getElementById('carCounter');
+    let carPaused = false;
+
     for (let i = 0; i < carTotal; i++) {
       const d = document.createElement('span');
       d.className = 'car-dot' + (i === 0 ? ' active' : '');
       d.onclick = () => carGoTo(i);
       carDotsEl.appendChild(d);
     }
+
     function carGoTo(n) {
       carIdx = (n + carTotal) % carTotal;
       carTrackEl.style.transform = 'translateX(-' + (carIdx * 100) + '%)';
       carCounterEl.textContent = (carIdx + 1) + ' / ' + carTotal;
-      document.querySelectorAll('.car-dot').forEach(function (d, i) { d.classList.toggle('active', i === carIdx); });
+      document.querySelectorAll('.car-dot').forEach(function (d, i) {
+        d.classList.toggle('active', i === carIdx);
+      });
     }
-    function carMove(dir) { carGoTo(carIdx + dir); }
-    setInterval(function () { carMove(1); }, 3500);
 
-    /* SWIPE TOUCH no carrossel */
+    function carMove(dir) { carGoTo(carIdx + dir); }
+
+    // ✅ Pausa o autoplay quando o usuário está olhando
+    const carWrap = document.getElementById('carTrackWrap');
+    carWrap.addEventListener('mouseenter', function() { carPaused = true; });
+    carWrap.addEventListener('mouseleave', function() { carPaused = false; });
+    carWrap.addEventListener('touchstart', function() { carPaused = true; }, { passive: true });
+    carWrap.addEventListener('touchend', function() {
+      setTimeout(function() { carPaused = false; }, 3000);
+    }, { passive: true });
+
+    setInterval(function () {
+      if (!carPaused) carMove(1);
+    }, 3500);
+
+    /* ✅ SWIPE TOUCH no carrossel */
     (function() {
       const wrap = document.querySelector('.car-track-wrap');
       let startX = 0;
@@ -1707,9 +1750,15 @@
       btn.nextElementSibling.classList.toggle('open');
     }
 
-    /* POP-UP */
-    function openPopup() { document.getElementById('popupOverlay').classList.add('active'); }
-    function closePopup() { document.getElementById('popupOverlay').classList.remove('active'); }
+    /* ✅ POP-UP — sem fbq no abrir/fechar */
+    function openPopup() {
+      document.getElementById('popupOverlay').classList.add('active');
+    }
+
+    function closePopup() {
+      document.getElementById('popupOverlay').classList.remove('active');
+    }
+
     document.getElementById('popupOverlay').addEventListener('click', function (e) {
       if (e.target === this) closePopup();
     });
